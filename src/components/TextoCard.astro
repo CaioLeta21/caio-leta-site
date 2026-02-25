@@ -1,0 +1,40 @@
+---
+import { formatDate } from '../i18n/utils';
+import type { Locale } from '../i18n/utils';
+
+interface Props {
+  titulo: string;
+  descricao: string;
+  data: string;
+  tags: string[];
+  slug: string;
+  locale?: Locale;
+}
+
+const { titulo, descricao, data, tags, slug, locale = 'pt' } = Astro.props;
+
+const basePath = locale === 'en' ? '/en/articles' : '/artigos';
+---
+
+<article class="group fade-in">
+  <a href={`${basePath}/${slug}`} class="block py-6 border-b border-gray-200 dark:border-gray-800 hover:border-accent dark:hover:border-blue-400 transition-colors">
+    <time class="text-sm text-primary/40 dark:text-dark-text/40">
+      {formatDate(data, locale)}
+    </time>
+    <h3 class="font-serif text-xl md:text-2xl font-semibold mt-1 mb-2 group-hover:text-accent dark:group-hover:text-blue-400 transition-colors">
+      {titulo}
+    </h3>
+    <p class="text-primary/60 dark:text-dark-text/60 text-sm md:text-base leading-relaxed">
+      {descricao}
+    </p>
+    {tags.length > 0 && (
+      <div class="flex flex-wrap gap-2 mt-3">
+        {tags.map(tag => (
+          <span class="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-primary/60 dark:text-dark-text/60">
+            {tag}
+          </span>
+        ))}
+      </div>
+    )}
+  </a>
+</article>

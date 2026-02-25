@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const publicacoesGeologia = [
+  {
+    nome: "Geology, Geochemistry, and Geochronology of the Giant Rio Tinto VMS Deposit, Iberian Pyrite Belt, Spain",
+    descricao: "Paper publicado na Economic Geology (2022)",
+    link: "https://pubs.geoscienceworld.org/segweb/economicgeology/article-abstract/117/5/1149/613809/Geology-Geochemistry-and-Geochronology-of-the",
+    tipo: "Paper (2022)",
+  },
+  {
+    nome: "Tese de Doutorado - USP",
+    descricao: "Estudo isotópico de U-Pb, Lu-Hf e Ti em rochas vulcânicas associadas aos sulfetos maciços da Faixa Piritosa Ibérica (Espanha)",
+    link: "https://drive.google.com/file/d/1YVz4OJJNl_B2L5s3KoQGee4WiEuq8bbB/view?usp=sharing",
+    tipo: "Tese (2020)",
+  },
+  {
+    nome: "Dissertação de Mestrado - USP",
+    descricao: "Petrografia e características isotópicas de Pb da mineralização aurífera de Marmato, Colômbia",
+    link: "https://drive.google.com/file/d/0B4wc9hKJ7e8Jd091c0tWZG01d1E/view?usp=sharing&resourcekey=0-1K9k7E1ph_P6DW_1LOcE3g",
+    tipo: "Dissertação (2015)",
+  },
+];
+
+const relatorios = [
+  {
+    titulo: "Quem deve ou não investir em Bitcoin",
+    data: "2025-05",
+    fileId: "1a1-Drzc_MA4G_YaVZj9jH1vS8WiCf-Fs",
+  },
+  {
+    titulo: "Expectativas 2025",
+    data: "2025-01",
+    fileId: "1wGwiOSbc8jvgHGVDKgyp8kfCFeLQnKXv",
+  },
+  {
+    titulo: "Retrospectiva 2024",
+    data: "2024-12",
+    fileId: "10kNK7GtX2FSgEfIq5MTIem6AN8mfTCDJ",
+  },
+  {
+    titulo: "O Ouro e o Bitcoin",
+    data: "2024-11",
+    fileId: "1hytsrII2OeMO-O7JYFHNlQyWzM1qAeTc",
+  },
+  {
+    titulo: "A Rede Elétrica Nacional e a Mineração de Bitcoin",
+    data: "2024-06",
+    fileId: "1_uloPI31gosppZon2JyLI9pFnbWQTynP",
+  },
+  {
+    titulo: "O Ouro e o Bitcoin - Parte I",
+    data: "2024-06",
+    fileId: "1LKOx2Qv_mJ4nGOVb4nBT9z6qC8ElyyLa",
+  },
+  {
+    titulo: "O Bitcoin e o Halving",
+    data: "2024-04",
+    fileId: "1zbDO-O80TYNddz352o_emIs7YplC6G0z",
+  },
+  {
+    titulo: "2024: A Tempestade Perfeita",
+    data: "2024-02",
+    fileId: "1dyT6-xCe0FSOX92oakGm3ncl2hFx19e9",
+  },
+  {
+    titulo: "2023 in Review - Arthur Inc.",
+    data: "2024-01",
+    fileId: "1dQ_Y4y4uSNjBPC5tboFlAwNZgx-Tcaqz",
+  },
+  {
+    titulo: "Propriedades do Bitcoin",
+    data: "2023-12",
+    fileId: "1BgaYcYnqbRdoGQy0q7hlWjA0UONgiRJK",
+  },
+  {
+    titulo: "O Bitcoin está barato?",
+    data: "2023-10",
+    fileId: "1dkX5iulvTqsj6ocxcM5YBJenTbvFtGzU",
+  },
+  {
+    titulo: "Os halvings e a dinâmica dos ciclos do Bitcoin",
+    data: "2023-09",
+    fileId: "19IXxeJxXomtaxI_sROqUA7RhPt57GMyL",
+  },
+  {
+    titulo: "Hash Wars",
+    data: "2023-08",
+    fileId: "1ajETm7qRGW0b0nWf0iMIWkrVLI0HMyHI",
+  },
+  {
+    titulo: "Os Estágios da Adoção do Bitcoin",
+    data: "2023-08",
+    fileId: "1HL-UxPQjKmKt36le1y6T5_ku8RE-hfMC",
+  },
+  {
+    titulo: "As Adoções do Bitcoin - Parte 2",
+    data: "2023-07",
+    fileId: "1ctvIShuaSbpB0DzFNrqfKq_Af_mDw0Ll",
+  },
+  {
+    titulo: "BlackRock, Adoção Institucional e a Oferta Ilíquida",
+    data: "2023-06",
+    fileId: "1Si2Cm0-DfCnxFsFWUH29dvF1zkDb1ch6",
+  },
+  {
+    titulo: "Um novo bull market se aproxima",
+    data: "2023-06",
+    fileId: "184PNYMmwdVKNleYVGqU0wiBNXEOQot4p",
+  },
+  {
+    titulo: "O que explica o preço do Bitcoin",
+    data: "2023-03",
+    fileId: "1Y1YpzbsWoEyoaHYQfdiHPLx6rOByW6dS",
+  },
+  {
+    titulo: "Retrospectiva 2022 e Outlook 2023",
+    data: "2023-01",
+    fileId: "19J-OYkpLF_HN9qUks-aQbtOI9RBcoKoC",
+  },
+  {
+    titulo: "Relatório Mining - Janeiro",
+    data: "2023-01",
+    fileId: "1L4I9muoobqEV8VdiKWdafwalGqU-txeU",
+  },
+  {
+    titulo: "Q4 2022 - Relatório Crypto Insights",
+    data: "2022-12",
+    fileId: "13gQmCy--BF5IZw9KVv3mu1cwBvNNyZWn",
+  },
+];
+
+const driveFolder = "https://drive.google.com/drive/folders/1dYtaFiP-r-a73GpNB4WD7NzrvK-1fln1?usp=sharing";
+
+function formatDate(dateStr: string) {
+  const [year, month] = dateStr.split('-');
+  const months: Record<string, string> = {
+    '01': 'Jan', '02': 'Fev', '03': 'Mar', '04': 'Abr',
+    '05': 'Mai', '06': 'Jun', '07': 'Jul', '08': 'Ago',
+    '09': 'Set', '10': 'Out', '11': 'Nov', '12': 'Dez'
+  };
+  return `${months[month]} ${year}`;
+}
+---
+
+<BaseLayout title="Relatórios - Caio Leta" description="Relatórios e análises sobre Bitcoin, mineração e mercado.">
+  <section class="max-w-3xl mx-auto px-6 pt-16 md:pt-24 pb-20">
+    <div class="fade-in">
+      <h1 class="font-serif text-3xl md:text-4xl font-bold mb-4">Relatórios</h1>
+      <p class="text-primary/50 dark:text-dark-text/50 mb-12">
+        Relatórios e análises sobre Bitcoin, mineração, energia e mercado.
+      </p>
+    </div>
+
+    <div class="fade-in">
+      <div class="space-y-4">
+        {relatorios.map(item => (
+          <div class="py-4 border-b border-gray-200 dark:border-gray-800">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
+              <h3 class="font-medium">{item.titulo}</h3>
+              <div class="flex items-center gap-4 shrink-0">
+                <span class="text-sm text-primary/40 dark:text-dark-text/40">{formatDate(item.data)}</span>
+                <a
+                  href={`https://drive.google.com/file/d/${item.fileId}/view`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-sm text-accent dark:text-blue-400 hover:opacity-70 transition-opacity"
+                >
+                  Download &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Geologia -->
+    <div class="fade-in mt-16">
+      <h2 class="font-serif text-2xl font-semibold mb-6">Geologia</h2>
+      <p class="text-primary/50 dark:text-dark-text/50 mb-8">
+        Produção acadêmica em Geologia Isotópica e Geocronologia.
+      </p>
+      <div class="space-y-4">
+        {publicacoesGeologia.map(item => (
+          <div class="py-4 border-b border-gray-200 dark:border-gray-800">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
+              <div>
+                <h3 class="font-medium">{item.nome}</h3>
+                <p class="text-sm text-primary/50 dark:text-dark-text/50">{item.tipo} · {item.descricao}</p>
+              </div>
+              {item.link && (
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-sm text-accent dark:text-blue-400 hover:opacity-70 transition-opacity shrink-0"
+                >
+                  Ver &rarr;
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

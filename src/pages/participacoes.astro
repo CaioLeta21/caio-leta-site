@@ -1,0 +1,228 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const palestras = [
+  {
+    titulo: "Energia e Mineração de Bitcoin",
+    evento: "Satsconf 2025",
+    tipo: "Palestra",
+    link: "https://www.youtube.com/watch?v=s_s-9okmsEg",
+  },
+  {
+    titulo: "Bitcoin e Geopolítica",
+    evento: "Accelerating Bitcoin (Paraguai, 2026)",
+    tipo: "Palestra",
+    link: null,
+  },
+  {
+    titulo: "Adoção de Bitcoin",
+    evento: "Satsconf 2024",
+    tipo: "Palestra",
+    link: "https://www.youtube.com/watch?v=EADaXvHPmHY",
+  },
+  {
+    titulo: "Bitcoin Spring Fest",
+    evento: "Bitcoin Spring Fest (Rolante, 2023)",
+    tipo: "Palestra",
+    link: "https://www.youtube.com/watch?v=PN_7amjZzGQ",
+  },
+  {
+    titulo: "Módulo de Mineração de Bitcoin",
+    evento: "Certificação oficial de Bitcoin da Brasil Paralelo",
+    tipo: "Curso",
+    link: null,
+  },
+];
+
+const paineis = [
+  {
+    titulo: "Mineração de Bitcoin",
+    evento: "Satsconf 2024",
+    tipo: "Moderação de painel",
+    link: "https://www.youtube.com/watch?v=4K1O7UhBNsc",
+  },
+  {
+    titulo: "Adoção de Bitcoin",
+    evento: "Satsconf 2024",
+    tipo: "Moderação de painel",
+    link: "https://www.youtube.com/watch?v=8XliLvb050Q",
+  },
+  {
+    titulo: "Análise On-Chain",
+    evento: "Satsconf 2024",
+    tipo: "Moderação de painel",
+    link: "https://www.youtube.com/watch?v=_r1c3QK7Mog",
+  },
+  {
+    titulo: "Mineração de Bitcoin",
+    evento: "Satsconf 2023",
+    tipo: "Moderação de painel",
+    link: "https://www.youtube.com/watch?v=sBuu9F-Z6mw",
+  },
+  {
+    titulo: "Firechat de encerramento com Rapha Zagury",
+    evento: "Satsconf 2023",
+    tipo: "Conversa",
+    link: "https://www.youtube.com/watch?v=hOkDXlzznuY",
+  },
+  {
+    titulo: "Mineração de Bitcoin",
+    evento: "Satsconf 2022",
+    tipo: "Moderação de painel",
+    link: "https://www.youtube.com/watch?v=EFTMkLIeFjE",
+  },
+];
+
+const podcasts = [
+  {
+    nome: "Explica Bitcoin",
+    descricao: "Projeto pessoal com 100+ episódios sobre Bitcoin",
+    link: "https://www.youtube.com/@ExplicaBitcoin",
+  },
+  {
+    nome: "Bipa Podcast",
+    descricao: "50+ episódios, um dos maiores podcasts bitcoin-only do Brasil (2024-2025)",
+    link: "https://www.youtube.com/@usebipa/podcasts",
+  },
+  {
+    nome: "Arthur Mining Podcast",
+    descricao: "20+ episódios sobre mineração de bitcoin e energia",
+    link: "https://www.youtube.com/@arthurmining/videos",
+  },
+];
+
+const publicacoes = [
+  {
+    nome: "Bitcoin Magazine",
+    descricao: "Artigos em inglês sobre Bitcoin",
+    link: "https://bitcoinmagazine.com/authors/pudim",
+  },
+  {
+    nome: "Livecoins",
+    descricao: "Coluna regular no principal portal bitcoin-only do Brasil (desde 2021)",
+    link: "https://livecoins.com.br/author/pudim/",
+  },
+  {
+    nome: "O Mundo Mágico do Bitcoin",
+    descricao: "Livro sobre o primeiro ano estudando Bitcoin e os aprendizados do processo",
+    link: "https://drive.google.com/file/d/15r4x_vUcP-kozUVnSWczcf7CJCmZ91cf/view?usp=sharing",
+  },
+];
+---
+
+<BaseLayout title="Participações - Caio Leta" description="Palestras, painéis, podcasts e publicações de Caio Leta.">
+  <section class="max-w-3xl mx-auto px-6 pt-16 md:pt-24 pb-20">
+    <div class="fade-in">
+      <h1 class="font-serif text-3xl md:text-4xl font-bold mb-4">Participações</h1>
+      <p class="text-primary/50 dark:text-dark-text/50 mb-12">
+        Palestras, painéis, podcasts e publicações.
+      </p>
+    </div>
+
+    <!-- Palestras -->
+    <div class="fade-in mb-14">
+      <h2 class="font-serif text-2xl font-semibold mb-6">Palestras</h2>
+      <div class="space-y-4">
+        {palestras.map(item => (
+          <div class="py-4 border-b border-gray-200 dark:border-gray-800">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
+              <div>
+                <h3 class="font-medium">{item.titulo}</h3>
+                <p class="text-sm text-primary/50 dark:text-dark-text/50">{item.evento}</p>
+              </div>
+              {item.link && (
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-sm text-accent dark:text-blue-400 hover:opacity-70 transition-opacity shrink-0"
+                >
+                  Assistir &rarr;
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Painéis -->
+    <div class="fade-in mb-14">
+      <h2 class="font-serif text-2xl font-semibold mb-6">Painéis e moderações</h2>
+      <div class="space-y-4">
+        {paineis.map(item => (
+          <div class="py-4 border-b border-gray-200 dark:border-gray-800">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
+              <div>
+                <h3 class="font-medium">{item.titulo}</h3>
+                <p class="text-sm text-primary/50 dark:text-dark-text/50">{item.tipo} · {item.evento}</p>
+              </div>
+              {item.link && (
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-sm text-accent dark:text-blue-400 hover:opacity-70 transition-opacity shrink-0"
+                >
+                  Assistir &rarr;
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Podcasts -->
+    <div class="fade-in mb-14">
+      <h2 class="font-serif text-2xl font-semibold mb-6">Podcasts</h2>
+      <div class="space-y-4">
+        {podcasts.map(item => (
+          <div class="py-4 border-b border-gray-200 dark:border-gray-800">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
+              <div>
+                <h3 class="font-medium">{item.nome}</h3>
+                <p class="text-sm text-primary/50 dark:text-dark-text/50">{item.descricao}</p>
+              </div>
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm text-accent dark:text-blue-400 hover:opacity-70 transition-opacity shrink-0"
+              >
+                Ver canal &rarr;
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Publicações -->
+    <div class="fade-in mb-14">
+      <h2 class="font-serif text-2xl font-semibold mb-6">Publicações</h2>
+      <div class="space-y-4">
+        {publicacoes.map(item => (
+          <div class="py-4 border-b border-gray-200 dark:border-gray-800">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
+              <div>
+                <h3 class="font-medium">{item.nome}</h3>
+                <p class="text-sm text-primary/50 dark:text-dark-text/50">{item.descricao}</p>
+              </div>
+              {item.link && (
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-sm text-accent dark:text-blue-400 hover:opacity-70 transition-opacity shrink-0"
+                >
+                  Ver &rarr;
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

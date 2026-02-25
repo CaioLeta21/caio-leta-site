@@ -1,0 +1,114 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { t } from '../../i18n/utils';
+
+const locale = 'en' as const;
+---
+
+<BaseLayout title={t(locale, 'about.title')} description={t(locale, 'about.metaDescription')}>
+  <section class="max-w-3xl mx-auto px-6 pt-16 md:pt-24 pb-20">
+    <div class="fade-in">
+      <h1 class="font-serif text-3xl md:text-4xl font-bold mb-10">{t(locale, 'about.heading')}</h1>
+
+      <img
+        src="/caio-leta.jpg"
+        alt="Caio Leta"
+        width="160"
+        height="160"
+        class="rounded-full mb-8"
+      />
+
+      <div class="prose">
+        <p>
+          My name is Caio Leta. I am a Bitcoin researcher, content strategist, and geologist by training,
+          with a PhD from the University of São Paulo (USP). I work at the intersection of Bitcoin, energy,
+          and education, translating complex technical concepts into accessible ideas.
+        </p>
+
+        <p>
+          I believe that the energy revolution Bitcoin represents is as important as the monetary revolution
+          it enables. This conviction guides my work and content production.
+        </p>
+
+        <h2>Background</h2>
+
+        <p>
+          My academic career was in Geology, with a master's and doctoral degree focused on Isotope Geology
+          and Geochronology applied to mineral deposit formation. I conducted research in international settings,
+          collaborating with teams from Colombia, Spain, and Canada, including a period as a visiting researcher
+          at Memorial University of Newfoundland.
+        </p>
+
+        <p>
+          In recent years, I transitioned to the Bitcoin ecosystem. At Arthur Mining (now Arthur Inc.),
+          I served as Head of Research, producing monthly technical reports for clients and investors
+          on mining operations and the integration between bitcoin mining and stranded energy.
+        </p>
+
+        <p>
+          At Bipa, a Brazilian bitcoin-only exchange, I was Head of Content and Research. I built the
+          platform's educational narrative, managed blog and social media, and launched the Bipa Podcast,
+          which became one of the largest bitcoin-only podcasts in Brazil between 2024-2025.
+        </p>
+
+        <p>
+          In partnership with Brasil Paralelo, Brazil's largest independent education platform, I created
+          and taught the Bitcoin Mining module for the platform's official Bitcoin Certification.
+        </p>
+
+        <h2>Explica Bitcoin</h2>
+
+        <p>
+          I founded Explica Bitcoin, one of the leading educational projects about Bitcoin in Brazil.
+          The project includes over 100 articles translated from English to Portuguese (before AI
+          made this work easier), over 20 original texts, and more than 100 podcast episodes.
+        </p>
+
+        <h2>Book</h2>
+
+        <p>
+          To celebrate my first year studying Bitcoin, I wrote a book titled
+          "O Mundo Mágico do Bitcoin" (The Magical World of Bitcoin), a compilation of my initial studies on the subject.
+        </p>
+
+        <h2>Education</h2>
+
+        <p>
+          PhD in Geosciences (Isotope Geology and Geochronology) from USP. Master's and bachelor's degrees
+          in Geology, also from USP. Fluent in Portuguese, English, and advanced Spanish.
+        </p>
+      </div>
+    </div>
+
+    <div class="fade-in mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
+      <h2 class="font-serif text-xl font-semibold mb-6">{t(locale, 'about.findMe')}</h2>
+      <ul class="space-y-3">
+        <li>
+          <a href="https://www.linkedin.com/in/caio-leta/" target="_blank" rel="noopener noreferrer" class="text-accent dark:text-blue-400 hover:opacity-70 transition-opacity">
+            LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/BitcoinExplica" target="_blank" rel="noopener noreferrer" class="text-accent dark:text-blue-400 hover:opacity-70 transition-opacity">
+            X / Twitter
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/@ExplicaBitcoin" target="_blank" rel="noopener noreferrer" class="text-accent dark:text-blue-400 hover:opacity-70 transition-opacity">
+            YouTube - Explica Bitcoin
+          </a>
+        </li>
+        <li>
+          <a href="https://livecoins.com.br/author/pudim/" target="_blank" rel="noopener noreferrer" class="text-accent dark:text-blue-400 hover:opacity-70 transition-opacity">
+            Livecoins
+          </a>
+        </li>
+        <li>
+          <a href="https://bitcoinmagazine.com/authors/pudim" target="_blank" rel="noopener noreferrer" class="text-accent dark:text-blue-400 hover:opacity-70 transition-opacity">
+            Bitcoin Magazine
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

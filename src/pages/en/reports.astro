@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { t, formatMonthYear } from '../../i18n/utils';
+
+const locale = 'en' as const;
+
+const publicacoesGeologia = [
+  {
+    nome: "Geology, Geochemistry, and Geochronology of the Giant Rio Tinto VMS Deposit, Iberian Pyrite Belt, Spain",
+    descricao: "Paper published in Economic Geology (2022)",
+    link: "https://pubs.geoscienceworld.org/segweb/economicgeology/article-abstract/117/5/1149/613809/Geology-Geochemistry-and-Geochronology-of-the",
+    tipo: "Paper (2022)",
+  },
+  {
+    nome: "PhD Thesis - USP",
+    descricao: "U-Pb, Lu-Hf and Ti isotopic study of volcanic rocks associated with massive sulfides of the Iberian Pyrite Belt (Spain)",
+    link: "https://drive.google.com/file/d/1YVz4OJJNl_B2L5s3KoQGee4WiEuq8bbB/view?usp=sharing",
+    tipo: "Thesis (2020)",
+  },
+  {
+    nome: "Master's Thesis - USP",
+    descricao: "Petrography and Pb isotopic characteristics of the Marmato gold mineralization, Colombia",
+    link: "https://drive.google.com/file/d/0B4wc9hKJ7e8Jd091c0tWZG01d1E/view?usp=sharing&resourcekey=0-1K9k7E1ph_P6DW_1LOcE3g",
+    tipo: "Thesis (2015)",
+  },
+];
+
+const relatorios = [
+  {
+    titulo: "Who Should or Shouldn't Invest in Bitcoin",
+    data: "2025-05",
+    fileId: "1a1-Drzc_MA4G_YaVZj9jH1vS8WiCf-Fs",
+  },
+  {
+    titulo: "2025 Outlook",
+    data: "2025-01",
+    fileId: "1wGwiOSbc8jvgHGVDKgyp8kfCFeLQnKXv",
+  },
+  {
+    titulo: "2024 Year in Review",
+    data: "2024-12",
+    fileId: "10kNK7GtX2FSgEfIq5MTIem6AN8mfTCDJ",
+  },
+  {
+    titulo: "Gold and Bitcoin",
+    data: "2024-11",
+    fileId: "1hytsrII2OeMO-O7JYFHNlQyWzM1qAeTc",
+  },
+  {
+    titulo: "The National Power Grid and Bitcoin Mining",
+    data: "2024-06",
+    fileId: "1_uloPI31gosppZon2JyLI9pFnbWQTynP",
+  },
+  {
+    titulo: "Gold and Bitcoin - Part I",
+    data: "2024-06",
+    fileId: "1LKOx2Qv_mJ4nGOVb4nBT9z6qC8ElyyLa",
+  },
+  {
+    titulo: "Bitcoin and the Halving",
+    data: "2024-04",
+    fileId: "1zbDO-O80TYNddz352o_emIs7YplC6G0z",
+  },
+  {
+    titulo: "2024: The Perfect Storm",
+    data: "2024-02",
+    fileId: "1dyT6-xCe0FSOX92oakGm3ncl2hFx19e9",
+  },
+  {
+    titulo: "2023 in Review - Arthur Inc.",
+    data: "2024-01",
+    fileId: "1dQ_Y4y4uSNjBPC5tboFlAwNZgx-Tcaqz",
+  },
+  {
+    titulo: "Properties of Bitcoin",
+    data: "2023-12",
+    fileId: "1BgaYcYnqbRdoGQy0q7hlWjA0UONgiRJK",
+  },
+  {
+    titulo: "Is Bitcoin Cheap?",
+    data: "2023-10",
+    fileId: "1dkX5iulvTqsj6ocxcM5YBJenTbvFtGzU",
+  },
+  {
+    titulo: "Halvings and the Dynamics of Bitcoin Cycles",
+    data: "2023-09",
+    fileId: "19IXxeJxXomtaxI_sROqUA7RhPt57GMyL",
+  },
+  {
+    titulo: "Hash Wars",
+    data: "2023-08",
+    fileId: "1ajETm7qRGW0b0nWf0iMIWkrVLI0HMyHI",
+  },
+  {
+    titulo: "The Stages of Bitcoin Adoption",
+    data: "2023-08",
+    fileId: "1HL-UxPQjKmKt36le1y6T5_ku8RE-hfMC",
+  },
+  {
+    titulo: "Bitcoin Adoption - Part 2",
+    data: "2023-07",
+    fileId: "1ctvIShuaSbpB0DzFNrqfKq_Af_mDw0Ll",
+  },
+  {
+    titulo: "BlackRock, Institutional Adoption and the Illiquid Supply",
+    data: "2023-06",
+    fileId: "1Si2Cm0-DfCnxFsFWUH29dvF1zkDb1ch6",
+  },
+  {
+    titulo: "A New Bull Market Approaches",
+    data: "2023-06",
+    fileId: "184PNYMmwdVKNleYVGqU0wiBNXEOQot4p",
+  },
+  {
+    titulo: "What Explains Bitcoin's Price",
+    data: "2023-03",
+    fileId: "1Y1YpzbsWoEyoaHYQfdiHPLx6rOByW6dS",
+  },
+  {
+    titulo: "2022 Retrospective and 2023 Outlook",
+    data: "2023-01",
+    fileId: "19J-OYkpLF_HN9qUks-aQbtOI9RBcoKoC",
+  },
+  {
+    titulo: "Mining Report - January",
+    data: "2023-01",
+    fileId: "1L4I9muoobqEV8VdiKWdafwalGqU-txeU",
+  },
+  {
+    titulo: "Q4 2022 - Crypto Insights Report",
+    data: "2022-12",
+    fileId: "13gQmCy--BF5IZw9KVv3mu1cwBvNNyZWn",
+  },
+];
+---
+
+<BaseLayout title={t(locale, 'reports.title')} description={t(locale, 'reports.metaDescription')}>
+  <section class="max-w-3xl mx-auto px-6 pt-16 md:pt-24 pb-20">
+    <div class="fade-in">
+      <h1 class="font-serif text-3xl md:text-4xl font-bold mb-4">{t(locale, 'reports.heading')}</h1>
+      <p class="text-primary/50 dark:text-dark-text/50 mb-12">
+        {t(locale, 'reports.subtitle')}
+      </p>
+    </div>
+
+    <div class="fade-in">
+      <div class="space-y-4">
+        {relatorios.map(item => (
+          <div class="py-4 border-b border-gray-200 dark:border-gray-800">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
+              <h3 class="font-medium">{item.titulo}</h3>
+              <div class="flex items-center gap-4 shrink-0">
+                <span class="text-sm text-primary/40 dark:text-dark-text/40">{formatMonthYear(item.data, locale)}</span>
+                <a
+                  href={`https://drive.google.com/file/d/${item.fileId}/view`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-sm text-accent dark:text-blue-400 hover:opacity-70 transition-opacity"
+                >
+                  {t(locale, 'reports.download')} &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Geology -->
+    <div class="fade-in mt-16">
+      <h2 class="font-serif text-2xl font-semibold mb-6">{t(locale, 'geology.heading')}</h2>
+      <p class="text-primary/50 dark:text-dark-text/50 mb-8">
+        {t(locale, 'geology.subtitle')}
+      </p>
+      <div class="space-y-4">
+        {publicacoesGeologia.map(item => (
+          <div class="py-4 border-b border-gray-200 dark:border-gray-800">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
+              <div>
+                <h3 class="font-medium">{item.nome}</h3>
+                <p class="text-sm text-primary/50 dark:text-dark-text/50">{item.tipo} · {item.descricao}</p>
+              </div>
+              {item.link && (
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-sm text-accent dark:text-blue-400 hover:opacity-70 transition-opacity shrink-0"
+                >
+                  {t(locale, 'geology.view')} &rarr;
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

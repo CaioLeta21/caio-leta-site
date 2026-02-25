@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-primary font-sans transition-colors duration-300;
+  }
+
+  .dark body {
+    @apply bg-dark-bg text-dark-text;
+  }
+}
+
+@layer components {
+  .prose {
+    @apply max-w-none;
+  }
+
+  .prose h1 {
+    @apply font-serif text-3xl md:text-4xl font-bold mb-6 mt-10;
+  }
+
+  .prose h2 {
+    @apply font-serif text-2xl md:text-3xl font-semibold mb-4 mt-8;
+  }
+
+  .prose h3 {
+    @apply font-serif text-xl md:text-2xl font-semibold mb-3 mt-6;
+  }
+
+  .prose p {
+    @apply text-base md:text-lg leading-relaxed mb-5;
+  }
+
+  .prose a {
+    @apply text-accent underline underline-offset-2 hover:opacity-80 transition-opacity;
+  }
+
+  .dark .prose a {
+    @apply text-blue-400;
+  }
+
+  .prose ul, .prose ol {
+    @apply mb-5 pl-6;
+  }
+
+  .prose ul {
+    @apply list-disc;
+  }
+
+  .prose ol {
+    @apply list-decimal;
+  }
+
+  .prose li {
+    @apply mb-2 text-base md:text-lg leading-relaxed;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-accent pl-4 italic my-6 opacity-80;
+  }
+
+  .dark .prose blockquote {
+    @apply border-blue-400;
+  }
+
+  .prose img {
+    @apply rounded-lg my-6 w-full;
+  }
+
+  .prose code {
+    @apply bg-gray-100 px-1.5 py-0.5 rounded text-sm;
+  }
+
+  .dark .prose code {
+    @apply bg-gray-800;
+  }
+
+  .prose pre {
+    @apply bg-gray-100 p-4 rounded-lg overflow-x-auto my-6;
+  }
+
+  .dark .prose pre {
+    @apply bg-gray-800;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,138 @@
+---
+import { getNavLinks, getAlternateUrl, t } from '../i18n/utils';
+import type { Locale } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const currentPath = Astro.url.pathname;
+const links = getNavLinks(locale);
+const homeHref = locale === 'en' ? '/en' : '/';
+
+const switchLocale = locale === 'pt' ? 'en' : 'pt';
+const switchHref = getAlternateUrl(Astro.url, switchLocale);
+const switchAriaLabel = locale === 'pt' ? 'Switch to English' : 'Mudar para Português';
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-background/80 dark:bg-dark-bg/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+  <nav class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href={homeHref} class="font-serif text-xl font-bold text-primary dark:text-dark-text hover:opacity-70 transition-opacity whitespace-nowrap shrink-0">
+      Caio Leta
+    </a>
+
+    <div class="flex items-center gap-6">
+      <ul class="hidden md:flex items-center gap-6">
+        {links.map(link => (
+          <li>
+            <a
+              href={link.href}
+              class:list={[
+                'text-sm font-medium transition-opacity hover:opacity-70',
+                currentPath === link.href || currentPath === link.href + '/'
+                  ? 'text-accent dark:text-blue-400'
+                  : 'text-primary/70 dark:text-dark-text/70'
+              ]}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <button
+        id="theme-toggle"
+        aria-label={t(locale, 'header.toggleTheme')}
+        class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+      >
+        <svg id="sun-icon" class="w-5 h-5 hidden dark:block text-dark-text" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+        </svg>
+        <svg id="moon-icon" class="w-5 h-5 block dark:hidden text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+
+      <a
+        href={switchHref}
+        aria-label={switchAriaLabel}
+        class="text-lg hover:opacity-70 transition-opacity leading-none"
+      >
+        {locale === 'pt' ? '🇺🇸' : '🇧🇷'}
+      </a>
+
+      <button
+        id="mobile-menu-btn"
+        aria-label={t(locale, 'header.menu')}
+        class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+      >
+        <svg class="w-5 h-5 text-primary dark:text-dark-text" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 dark:border-gray-800 bg-background dark:bg-dark-bg">
+    <ul class="px-6 py-4 space-y-3">
+      {links.map(link => (
+        <li>
+          <a
+            href={link.href}
+            class:list={[
+              'block text-sm font-medium transition-opacity hover:opacity-70',
+              currentPath === link.href || currentPath === link.href + '/'
+                ? 'text-accent dark:text-blue-400'
+                : 'text-primary/70 dark:text-dark-text/70'
+            ]}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li>
+        <a
+          href={switchHref}
+          class="block text-sm font-medium text-primary/70 dark:text-dark-text/70 hover:text-accent dark:hover:text-blue-400 transition-colors"
+        >
+          {locale === 'pt' ? '🇺🇸 English' : '🇧🇷 Português'}
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  const themeToggle = document.getElementById('theme-toggle');
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  function getTheme(): string {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme')!;
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function setTheme(theme: string) {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  }
+
+  setTheme(getTheme());
+
+  themeToggle?.addEventListener('click', () => {
+    const current = getTheme();
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>

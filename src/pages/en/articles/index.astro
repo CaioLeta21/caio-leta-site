@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import TextoCard from '../../../components/TextoCard.astro';
+import { getCollection } from 'astro:content';
+import { t } from '../../../i18n/utils';
+
+const locale = 'en' as const;
+
+const allTextos = await getCollection('textos');
+
+// EN articles page: show EN articles first, then PT articles that have no EN translation
+const enArticles = allTextos.filter(texto => texto.data.lang === 'en');
+const enTranslationOfIds = new Set(enArticles.map(a => a.data.translationOf).filter(Boolean));
+const ptWithoutTranslation = allTextos.filter(
+  texto => texto.data.lang !== 'en' && !enTranslationOfIds.has(texto.id)
+);
+
+const visibleArticles = [...enArticles, ...ptWithoutTranslation].sort(
+  (a, b) => new Date(b.data.data).getTime() - new Date(a.data.data).getTime()
+);
+
+const allTags = [...new Set(visibleArticles.flatMap(texto => texto.data.tags))].sort();
+---
+
+<BaseLayout title={t(locale, 'articles.title')} description={t(locale, 'articles.metaDescription')}>
+  <section class="max-w-3xl mx-auto px-6 pt-16 md:pt-24 pb-20">
+    <div class="fade-in">
+      <h1 class="font-serif text-3xl md:text-4xl font-bold mb-4">{t(locale, 'articles.heading')}</h1>
+      <p class="text-primary/50 dark:text-dark-text/50 mb-10">
+        {visibleArticles.length} {visibleArticles.length === 1 ? t(locale, 'articles.count.singular') : t(locale, 'articles.count.plural')}
+      </p>
+    </div>
+
+    <div class="fade-in mb-10">
+      <div class="flex flex-wrap gap-2" id="tag-filters">
+        <button
+          data-tag="todos"
+          class="tag-btn text-xs px-3 py-1.5 rounded-full border border-accent dark:border-blue-400 bg-accent dark:bg-blue-400 text-white transition-colors"
+        >
+          {t(locale, 'articles.all')}
+        </button>
+        {allTags.map(tag => (
+          <button
+            data-tag={tag}
+            class="tag-btn text-xs px-3 py-1.5 rounded-full border border-gray-300 dark:border-gray-700 text-primary/60 dark:text-dark-text/60 hover:border-accent dark:hover:border-blue-400 transition-colors"
+          >
+            {tag}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <div id="textos-list">
+      {visibleArticles.map(texto => (
+        <div data-tags={texto.data.tags.join(',')}>
+          <TextoCard
+            titulo={texto.data.titulo}
+            descricao={texto.data.descricao}
+            data={texto.data.data}
+            tags={texto.data.tags}
+            slug={texto.id}
+            locale={locale}
+          />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <script>
+    const buttons = document.querySelectorAll('.tag-btn');
+    const items = document.querySelectorAll('#textos-list > div');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tag = btn.getAttribute('data-tag');
+
+        buttons.forEach(b => {
+          b.classList.remove('border-accent', 'dark:border-blue-400', 'bg-accent', 'dark:bg-blue-400', 'text-white');
+          b.classList.add('border-gray-300', 'dark:border-gray-700', 'text-primary/60', 'dark:text-dark-text/60');
+        });
+        btn.classList.remove('border-gray-300', 'dark:border-gray-700', 'text-primary/60', 'dark:text-dark-text/60');
+        btn.classList.add('border-accent', 'dark:border-blue-400', 'bg-accent', 'dark:bg-blue-400', 'text-white');
+
+        items.forEach(item => {
+          if (tag === 'todos') {
+            (item as HTMLElement).style.display = '';
+          } else {
+            const itemTags = item.getAttribute('data-tags')?.split(',') || [];
+            (item as HTMLElement).style.display = itemTags.includes(tag!) ? '' : 'none';
+          }
+        });
+      });
+    });
+  </script>
+</BaseLayout>
