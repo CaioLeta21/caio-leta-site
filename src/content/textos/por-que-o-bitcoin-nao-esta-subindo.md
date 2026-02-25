@@ -1,6 +1,6 @@
 ---
-titulo: "Por que o Bitcoin nao esta subindo?"
-descricao: "Apesar do governo Trump pro-Bitcoin e dos bilhoes investidos pela Strategy, o preco permanece lateralizado entre $90k-$105k. Uma analise dos fatores de oferta e demanda que mantem o Bitcoin consolidado."
+titulo: "Por que o Bitcoin não está subindo?"
+descricao: "Apesar do governo Trump pró-Bitcoin e dos bilhões investidos pela Strategy, o preço permanece lateralizado entre $90k-$105k. Uma análise dos fatores de oferta e demanda que mantêm o Bitcoin consolidado."
 data: "2025-02-10"
 tags: ["Bitcoin", "Mercados", "ETFs", "Macroeconomia"]
 publicadoEm: "Blog Bipa"

@@ -1,6 +1,6 @@
 ---
-titulo: "Como a DeepSeek e bullish para o Bitcoin"
-descricao: "A IA chinesa DeepSeek R1 demonstrou ser possivel fazer mais com menos recursos, questionando a dominancia tecnologica americana e potencialmente beneficiando ativos como Bitcoin e ouro ao abalar a confianca nas Mag7."
+titulo: "Como a DeepSeek é bullish para o Bitcoin"
+descricao: "A IA chinesa DeepSeek R1 demonstrou ser possível fazer mais com menos recursos, questionando a dominância tecnológica americana e potencialmente beneficiando ativos como Bitcoin e ouro ao abalar a confiança nas Mag7."
 data: "2025-01-30"
 tags: ["Bitcoin", "Macroeconomia", "Geopolítica", "Mercados"]
 publicadoEm: "Blog Bipa"

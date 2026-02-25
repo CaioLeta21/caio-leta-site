@@ -1,6 +1,6 @@
 ---
-titulo: "A diferenca de adocao institucional entre o Bitcoin e o Ethereum"
-descricao: "ETFs de Bitcoin atrairam bilhoes enquanto ETFs de Ethereum decepcionam. Uma analise da diferenca de adocao institucional entre os dois maiores criptoativos e como o mercado vem reconhecendo essa distincao."
+titulo: "A diferença de adoção institucional entre o Bitcoin e o Ethereum"
+descricao: "ETFs de Bitcoin atraíram bilhões enquanto ETFs de Ethereum decepcionam. Uma análise da diferença de adoção institucional entre os dois maiores criptoativos e como o mercado vem reconhecendo essa distinção."
 data: "2024-11-05"
 tags: ["Bitcoin", "ETFs", "Mercados", "Cripto"]
 publicadoEm: "Blog Bipa"

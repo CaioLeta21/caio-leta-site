@@ -1,6 +1,6 @@
 ---
-titulo: "Energia e Civilizacao"
-descricao: "Primeira parte da serie A Bateria Bitcoin, mostrando a relacao historica entre energia e civilizacao humana, como a variacao de energia capturada afeta o progresso e a qualidade de vida ao longo dos milenios."
+titulo: "Energia e Civilização"
+descricao: "Primeira parte da série A Bateria Bitcoin, mostrando a relação histórica entre energia e civilização humana, como a variação de energia capturada afeta o progresso e a qualidade de vida ao longo dos milênios."
 data: "2021-09-15"
 tags: ["Bitcoin", "Energia", "Educação"]
 publicadoEm: "Medium"

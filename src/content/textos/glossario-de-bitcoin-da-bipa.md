@@ -1,6 +1,6 @@
 ---
-titulo: "Glossario de Bitcoin da Bipa"
-descricao: "Glossario completo de Bitcoin que explica termos tecnicos do ecossistema, desde HODL ate Lightning Network, de forma simples e acessivel para iniciantes e entusiastas."
+titulo: "Glossário de Bitcoin da Bipa"
+descricao: "Glossário completo de Bitcoin que explica termos técnicos do ecossistema, desde HODL até Lightning Network, de forma simples e acessível para iniciantes e entusiastas."
 data: "2024-05-10"
 tags: ["Bitcoin", "Educação", "Cripto"]
 publicadoEm: "Blog Bipa"

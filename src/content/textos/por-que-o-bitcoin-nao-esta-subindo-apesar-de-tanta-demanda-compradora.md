@@ -1,6 +1,6 @@
 ---
-titulo: "Por que o Bitcoin nao esta subindo apesar de tanta demanda compradora?"
-descricao: "Apesar da forte demanda institucional por Bitcoin em 2025, o preco permanece estagnado. Uma analise de como as vendas de pequenos investidores contrabalancam as compras institucionais."
+titulo: "Por que o Bitcoin não está subindo apesar de tanta demanda compradora?"
+descricao: "Apesar da forte demanda institucional por Bitcoin em 2025, o preço permanece estagnado. Uma análise de como as vendas de pequenos investidores contrabalançam as compras institucionais."
 data: "2025-06-18"
 tags: ["Bitcoin", "Mercados", "ETFs", "Macroeconomia"]
 publicadoEm: "Blog Bipa"

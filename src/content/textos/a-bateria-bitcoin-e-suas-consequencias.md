@@ -1,6 +1,6 @@
 ---
-titulo: "A Bateria Bitcoin e suas Consequencias"
-descricao: "Terceira parte da serie A Bateria Bitcoin, explicando como o Bitcoin funciona, sua relacao com energia, mineracao e por que ele e um ativo relevante do ponto de vista ESG."
+titulo: "A Bateria Bitcoin e suas Consequências"
+descricao: "Terceira parte da série A Bateria Bitcoin, explicando como o Bitcoin funciona, sua relação com energia, mineração e por que ele é um ativo relevante do ponto de vista ESG."
 data: "2022-01-20"
 tags: ["Bitcoin", "Energia", "Mineração", "Educação"]
 publicadoEm: "Medium"

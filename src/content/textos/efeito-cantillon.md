@@ -1,6 +1,6 @@
 ---
 titulo: "Efeito Cantillon"
-descricao: "Explicacao do Efeito Cantillon e como a impressao de dinheiro beneficia desproporcionalmente quem esta mais proximo da sua emissao, contribuindo para a desigualdade social."
+descricao: "Explicação do Efeito Cantillon e como a impressão de dinheiro beneficia desproporcionalmente quem está mais próximo da sua emissão, contribuindo para a desigualdade social."
 data: "2021-05-20"
 tags: ["Bitcoin", "Economia", "Educação"]
 publicadoEm: "Medium"

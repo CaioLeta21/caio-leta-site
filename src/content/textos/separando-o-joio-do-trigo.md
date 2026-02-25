@@ -1,6 +1,6 @@
 ---
 titulo: "Separando o joio do trigo"
-descricao: "Guia para investidores de Bitcoin distinguirem informacoes relevantes (sinal) de ruido no mercado, usando conceitos de telecomunicacoes aplicados ao universo dos investimentos."
+descricao: "Guia para investidores de Bitcoin distinguirem informações relevantes (sinal) de ruído no mercado, usando conceitos de telecomunicações aplicados ao universo dos investimentos."
 data: "2021-07-20"
 tags: ["Bitcoin", "Mercados", "Educação"]
 publicadoEm: "Medium"

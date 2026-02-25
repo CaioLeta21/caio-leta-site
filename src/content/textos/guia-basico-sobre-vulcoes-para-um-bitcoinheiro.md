@@ -1,6 +1,6 @@
 ---
-titulo: "Guia Basico sobre Vulcoes para um bitcoinheiro"
-descricao: "Explicacao sobre vulcoes e energia geotermal no contexto da mineracao de Bitcoin em El Salvador, escrita por um geologo que une sua formacao academica com o universo Bitcoin."
+titulo: "Guia Básico sobre Vulcões para um Bitcoinheiro"
+descricao: "Explicação sobre vulcões e energia geotermal no contexto da mineração de Bitcoin em El Salvador, escrita por um geólogo que une sua formação acadêmica com o universo Bitcoin."
 data: "2021-06-13"
 tags: ["Bitcoin", "Energia", "Mineração", "Educação"]
 publicadoEm: "Medium"

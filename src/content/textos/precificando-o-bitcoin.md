@@ -1,6 +1,6 @@
 ---
 titulo: "Precificando o Bitcoin"
-descricao: "Analise dos principais modelos de precificacao do Bitcoin, incluindo o Stock-to-Flow, Lei de Metcalfe, custo de producao e outros, com reflexoes sobre fundamentos de longo prazo."
+descricao: "Análise dos principais modelos de precificação do Bitcoin, incluindo o Stock-to-Flow, Lei de Metcalfe, custo de produção e outros, com reflexões sobre fundamentos de longo prazo."
 data: "2021-05-18"
 tags: ["Bitcoin", "Mercados", "Economia", "Educação"]
 publicadoEm: "Medium"

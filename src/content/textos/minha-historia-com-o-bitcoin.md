@@ -1,6 +1,6 @@
 ---
-titulo: "Minha historia com o Bitcoin"
-descricao: "Relato pessoal da jornada do autor com o Bitcoin, desde o primeiro contato ate a dedicacao integral ao tema, passando por aprendizados, erros e a evolucao da sua compreensao sobre dinheiro e liberdade."
+titulo: "Minha história com o Bitcoin"
+descricao: "Relato pessoal da jornada do autor com o Bitcoin, desde o primeiro contato até a dedicação integral ao tema, passando por aprendizados, erros e a evolução da sua compreensão sobre dinheiro e liberdade."
 data: "2021-10-20"
 tags: ["Bitcoin", "Educação"]
 publicadoEm: "Medium"

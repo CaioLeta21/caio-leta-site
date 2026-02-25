@@ -1,6 +1,6 @@
 ---
 titulo: "O Ouro de Tolo Digital"
-descricao: "Analogia entre pirita (ouro de tolo) e shitcoins, explicando por que a grande maioria das criptomoedas alternativas nao possui valor real e como diferencia-las do Bitcoin."
+descricao: "Analogia entre pirita (ouro de tolo) e shitcoins, explicando por que a grande maioria das criptomoedas alternativas não possui valor real e como diferenciá-las do Bitcoin."
 data: "2021-08-15"
 tags: ["Bitcoin", "Cripto", "Educação"]
 publicadoEm: "Medium"

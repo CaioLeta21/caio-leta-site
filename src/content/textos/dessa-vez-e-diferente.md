@@ -1,6 +1,6 @@
 ---
-titulo: "Dessa vez e diferente?"
-descricao: "O mercado do Bitcoin passa por uma mudanca estrutural impulsionada pela aprovacao de ETFs e entrada de investidores institucionais, resultando em movimentos de preco mais estaveis e menos especulativos."
+titulo: "Dessa vez é diferente?"
+descricao: "O mercado do Bitcoin passa por uma mudança estrutural impulsionada pela aprovação de ETFs e entrada de investidores institucionais, resultando em movimentos de preço mais estáveis e menos especulativos."
 data: "2025-03-20"
 tags: ["Bitcoin", "Mercados", "ETFs", "Macroeconomia"]
 publicadoEm: "Blog Bipa"

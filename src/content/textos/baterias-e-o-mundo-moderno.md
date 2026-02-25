@@ -1,6 +1,6 @@
 ---
 titulo: "Baterias e o Mundo Moderno"
-descricao: "Segunda parte da serie A Bateria Bitcoin, explorando as diversas formas de armazenamento de energia utilizadas pela humanidade, desde baterias tradicionais ate o dinheiro como bateria."
+descricao: "Segunda parte da série A Bateria Bitcoin, explorando as diversas formas de armazenamento de energia utilizadas pela humanidade, desde baterias tradicionais até o dinheiro como bateria."
 data: "2021-11-10"
 tags: ["Bitcoin", "Energia", "Economia", "Educação"]
 publicadoEm: "Medium"

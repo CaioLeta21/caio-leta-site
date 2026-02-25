@@ -1,6 +1,6 @@
 ---
-titulo: "Os impactos da eleicao americana no Bitcoin"
-descricao: "A eleicao de Trump catapultou o Bitcoin a novas maximas. Uma analise de por que esse movimento e sustentavel e quais os efeitos de longo prazo, incluindo desregulamentacao, reserva estrategica e mudancas na SEC."
+titulo: "Os impactos da eleição americana no Bitcoin"
+descricao: "A eleição de Trump catapultou o Bitcoin a novas máximas. Uma análise de por que esse movimento é sustentável e quais os efeitos de longo prazo, incluindo desregulamentação, reserva estratégica e mudanças na SEC."
 data: "2024-11-12"
 tags: ["Bitcoin", "Geopolítica", "Regulação", "Mercados"]
 publicadoEm: "Blog Bipa"

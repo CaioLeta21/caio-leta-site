@@ -1,6 +1,6 @@
 ---
-titulo: "Sobre Tulipas e Manipulacao"
-descricao: "Desmistificacao da famosa Bolha das Tulipas holandesa, mostrando como a narrativa historica foi distorcida e manipulada ao longo de seculos, e o paralelo com narrativas anti-Bitcoin."
+titulo: "Sobre Tulipas e Manipulação"
+descricao: "Desmistificação da famosa Bolha das Tulipas holandesa, mostrando como a narrativa histórica foi distorcida e manipulada ao longo de séculos, e o paralelo com narrativas anti-Bitcoin."
 data: "2021-04-15"
 tags: ["Bitcoin", "Mercados", "Educação"]
 publicadoEm: "Medium"

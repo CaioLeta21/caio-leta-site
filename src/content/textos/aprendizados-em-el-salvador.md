@@ -1,6 +1,6 @@
 ---
 titulo: "Aprendizados em El Salvador"
-descricao: "Relato pessoal sobre a experiencia de viver em El Salvador apos a adocao do Bitcoin como moeda oficial, incluindo conversas com a populacao local e participacao na conferencia Adopting Bitcoin."
+descricao: "Relato pessoal sobre a experiência de viver em El Salvador após a adoção do Bitcoin como moeda oficial, incluindo conversas com a população local e participação na conferência Adopting Bitcoin."
 data: "2021-12-15"
 tags: ["Bitcoin", "Lightning Network", "Educação"]
 publicadoEm: "Medium"

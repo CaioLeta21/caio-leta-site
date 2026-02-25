@@ -1,6 +1,6 @@
 ---
-titulo: "BRICS e Mineracao de Bitcoin: Energia e Geopolitica"
-descricao: "Os BRICS utilizam suas fontes de energia para minerar Bitcoin de forma estrategica como ferramenta geopolitica, monetizando energia ociosa e se protegendo contra sancoes internacionais."
+titulo: "BRICS e Mineração de Bitcoin: Energia e Geopolítica"
+descricao: "Os BRICS utilizam suas fontes de energia para minerar Bitcoin de forma estratégica como ferramenta geopolítica, monetizando energia ociosa e se protegendo contra sanções internacionais."
 data: "2024-08-15"
 tags: ["Bitcoin", "Mineração", "Energia", "Geopolítica"]
 publicadoEm: "Blog Bipa"
