@@ -56,9 +56,10 @@ const articleLocale = texto.data.lang === 'en' ? 'en' : 'pt';
       {texto.data.linkOriginal && (
         <a
           href={texto.data.linkOriginal}
+          data-wayback={`https://web.archive.org/web/${texto.data.linkOriginal}`}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-block mt-3 text-sm text-accent dark:text-blue-400 hover:opacity-70 transition-opacity"
+          class="original-link inline-block mt-3 text-sm text-accent dark:text-blue-400 hover:opacity-70 transition-opacity"
         >
           {t(locale, 'articles.viewOriginal')} &rarr;
         </a>
@@ -86,4 +87,22 @@ const articleLocale = texto.data.lang === 'en' ? 'en' : 'pt';
       </a>
     </footer>
   </article>
+
+  <script>
+    document.querySelectorAll('a.original-link').forEach(link => {
+      link.addEventListener('click', async (e) => {
+        const el = e.currentTarget as HTMLAnchorElement;
+        const original = el.href;
+        const wayback = el.dataset.wayback;
+        if (!wayback) return;
+        e.preventDefault();
+        try {
+          const res = await fetch(original, { method: 'HEAD', mode: 'no-cors' });
+          window.open(original, '_blank');
+        } catch {
+          window.open(wayback, '_blank');
+        }
+      });
+    });
+  </script>
 </BaseLayout>
