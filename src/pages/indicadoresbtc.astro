@@ -11,7 +11,7 @@ import '../styles/btc-dashboard.css';
 
     <!-- Header -->
     <div class="bd-header">
-      <h1>BTC SIGNAL TRACKER</h1>
+      <h1>Termômetro do Bitcoin</h1>
       <p class="bd-subtitle">Sinais de compra e venda baseados em indicadores on-chain e de mercado</p>
     </div>
 
@@ -65,53 +65,64 @@ import '../styles/btc-dashboard.css';
       <span class="bd-spinner"></span> Carregando dados...
     </div>
 
-    <!-- 8 indicator cards -->
-    <div class="bd-cards">
-      <div class="bd-card" id="bd-card-mayer_multiple">
-        <div class="bd-card-title">Mayer Multiple</div>
-        <div class="bd-card-value" id="bd-card-value-mayer_multiple">...</div>
-        <span class="bd-card-signal" id="bd-card-signal-mayer_multiple"></span>
+    <!-- Two-column layout -->
+    <div class="bd-main">
+      <!-- Left column: cards -->
+      <div class="bd-left">
+        <div class="bd-cards">
+          <div class="bd-card" id="bd-card-mayer_multiple">
+            <div class="bd-card-title">Mayer Multiple</div>
+            <div class="bd-card-value" id="bd-card-value-mayer_multiple">...</div>
+            <span class="bd-card-signal" id="bd-card-signal-mayer_multiple"></span>
+          </div>
+          <div class="bd-card" id="bd-card-200w_ma_ratio">
+            <div class="bd-card-title">200W MA Ratio</div>
+            <div class="bd-card-value" id="bd-card-value-200w_ma_ratio">...</div>
+            <span class="bd-card-signal" id="bd-card-signal-200w_ma_ratio"></span>
+          </div>
+          <div class="bd-card" id="bd-card-mvrv">
+            <div class="bd-card-title">MVRV Ratio</div>
+            <div class="bd-card-value" id="bd-card-value-mvrv">...</div>
+            <span class="bd-card-signal" id="bd-card-signal-mvrv"></span>
+          </div>
+          <div class="bd-card" id="bd-card-fear_greed">
+            <div class="bd-card-title">Fear & Greed</div>
+            <div class="bd-card-value" id="bd-card-value-fear_greed">...</div>
+            <span class="bd-card-signal" id="bd-card-signal-fear_greed"></span>
+          </div>
+          <div class="bd-card" id="bd-card-rsi_weekly">
+            <div class="bd-card-title">RSI Semanal BTC/USD</div>
+            <div class="bd-card-value" id="bd-card-value-rsi_weekly">...</div>
+            <span class="bd-card-signal" id="bd-card-signal-rsi_weekly"></span>
+          </div>
+          <div class="bd-card" id="bd-card-rsi_monthly">
+            <div class="bd-card-title">RSI Mensal BTC/USD</div>
+            <div class="bd-card-value" id="bd-card-value-rsi_monthly">...</div>
+            <span class="bd-card-signal" id="bd-card-signal-rsi_monthly"></span>
+          </div>
+          <div class="bd-card" id="bd-card-rsi_xau_weekly">
+            <div class="bd-card-title">RSI Semanal BTC/XAU</div>
+            <div class="bd-card-value" id="bd-card-value-rsi_xau_weekly">...</div>
+            <span class="bd-card-signal" id="bd-card-signal-rsi_xau_weekly"></span>
+          </div>
+          <div class="bd-card" id="bd-card-rsi_xau_monthly">
+            <div class="bd-card-title">RSI Mensal BTC/XAU</div>
+            <div class="bd-card-value" id="bd-card-value-rsi_xau_monthly">...</div>
+            <span class="bd-card-signal" id="bd-card-signal-rsi_xau_monthly"></span>
+          </div>
+        </div>
       </div>
-      <div class="bd-card" id="bd-card-200w_ma_ratio">
-        <div class="bd-card-title">200W MA Ratio</div>
-        <div class="bd-card-value" id="bd-card-value-200w_ma_ratio">...</div>
-        <span class="bd-card-signal" id="bd-card-signal-200w_ma_ratio"></span>
-      </div>
-      <div class="bd-card" id="bd-card-mvrv">
-        <div class="bd-card-title">MVRV Ratio</div>
-        <div class="bd-card-value" id="bd-card-value-mvrv">...</div>
-        <span class="bd-card-signal" id="bd-card-signal-mvrv"></span>
-      </div>
-      <div class="bd-card" id="bd-card-fear_greed">
-        <div class="bd-card-title">Fear & Greed</div>
-        <div class="bd-card-value" id="bd-card-value-fear_greed">...</div>
-        <span class="bd-card-signal" id="bd-card-signal-fear_greed"></span>
-      </div>
-      <div class="bd-card" id="bd-card-rsi_weekly">
-        <div class="bd-card-title">RSI Semanal BTC/USD</div>
-        <div class="bd-card-value" id="bd-card-value-rsi_weekly">...</div>
-        <span class="bd-card-signal" id="bd-card-signal-rsi_weekly"></span>
-      </div>
-      <div class="bd-card" id="bd-card-rsi_monthly">
-        <div class="bd-card-title">RSI Mensal BTC/USD</div>
-        <div class="bd-card-value" id="bd-card-value-rsi_monthly">...</div>
-        <span class="bd-card-signal" id="bd-card-signal-rsi_monthly"></span>
-      </div>
-      <div class="bd-card" id="bd-card-rsi_xau_weekly">
-        <div class="bd-card-title">RSI Semanal BTC/XAU</div>
-        <div class="bd-card-value" id="bd-card-value-rsi_xau_weekly">...</div>
-        <span class="bd-card-signal" id="bd-card-signal-rsi_xau_weekly"></span>
-      </div>
-      <div class="bd-card" id="bd-card-rsi_xau_monthly">
-        <div class="bd-card-title">RSI Mensal BTC/XAU</div>
-        <div class="bd-card-value" id="bd-card-value-rsi_xau_monthly">...</div>
-        <span class="bd-card-signal" id="bd-card-signal-rsi_xau_monthly"></span>
-      </div>
-    </div>
 
-    <!-- Detail panel (charts) -->
-    <div class="bd-detail" id="bd-detail">
-      <div id="bd-detail-content"></div>
+      <!-- Right column: chart panel (always visible) -->
+      <div class="bd-right">
+        <div class="bd-detail" id="bd-detail">
+          <div id="bd-detail-content">
+            <div class="bd-detail-placeholder">
+              <p>Carregando grafico...</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Footer -->

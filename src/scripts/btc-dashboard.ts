@@ -117,12 +117,12 @@ interface DashboardLabels {
 }
 
 const LABELS_PT: DashboardLabels = {
-  title: 'BTC SIGNAL TRACKER',
+  title: 'Termômetro do Bitcoin',
   subtitle: 'Sinais de compra e venda baseados em indicadores on-chain e de mercado',
   loading: 'Carregando',
   loadingData: 'Carregando dados...',
   lastUpdate: 'Ultima atualizacao',
-  footer: 'BTC Signal Tracker | Dados atualizados a cada 5 minutos',
+  footer: 'Dados atualizados a cada 5 minutos',
   howCalculated: 'Como o sinal consolidado e calculado',
   explanationText: 'Cada indicador gera um score individual de -2 (venda forte) a +2 (compra forte). O score consolidado e a media dos scores dos indicadores selecionados.',
   currentBreakdown: 'Detalhamento atual',
@@ -171,12 +171,12 @@ const LABELS_PT: DashboardLabels = {
 };
 
 const LABELS_EN: DashboardLabels = {
-  title: 'BTC SIGNAL TRACKER',
+  title: 'Bitcoin Thermometer',
   subtitle: 'Buy and sell signals based on on-chain and market indicators',
   loading: 'Loading',
   loadingData: 'Loading data...',
   lastUpdate: 'Last update',
-  footer: 'BTC Signal Tracker | Data refreshed every 5 minutes',
+  footer: 'Data refreshed every 5 minutes',
   howCalculated: 'How the consolidated signal is calculated',
   explanationText: 'Each indicator generates an individual score from -2 (strong sell) to +2 (strong buy). The consolidated score is the average of the selected indicators scores.',
   currentBreakdown: 'Current breakdown',
