@@ -70,7 +70,7 @@ export function formatMonthYear(dateStr: string, locale: Locale): string {
   return `${t(locale, monthKey)} ${year}`;
 }
 
-/** Navigation links for each locale */
+/** Navigation links for each locale (Home is handled by the site logo) */
 export function getNavLinks(locale: Locale) {
   if (locale === 'en') {
     return [
