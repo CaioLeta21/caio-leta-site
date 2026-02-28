@@ -74,7 +74,6 @@ export function formatMonthYear(dateStr: string, locale: Locale): string {
 export function getNavLinks(locale: Locale) {
   if (locale === 'en') {
     return [
-      { href: '/en', label: t(locale, 'nav.home') },
       { href: '/en/about', label: t(locale, 'nav.about') },
       { href: '/en/articles', label: t(locale, 'nav.articles') },
       { href: '/en/appearances', label: t(locale, 'nav.appearances') },
@@ -84,7 +83,6 @@ export function getNavLinks(locale: Locale) {
     ];
   }
   return [
-    { href: '/', label: t(locale, 'nav.home') },
     { href: '/sobre', label: t(locale, 'nav.about') },
     { href: '/artigos', label: t(locale, 'nav.articles') },
     { href: '/participacoes', label: t(locale, 'nav.appearances') },
