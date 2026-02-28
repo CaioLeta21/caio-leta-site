@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/btc-dashboard.css';
+---
+
+<BaseLayout
+  title="BTC Indicators - Caio Leta"
+  description="Bitcoin buy and sell signals based on on-chain and market indicators."
+>
+  <div class="btc-dashboard" data-locale="en">
+
+    <!-- Header -->
+    <div class="bd-header">
+      <h1>BTC SIGNAL TRACKER</h1>
+      <p class="bd-subtitle">Buy and sell signals based on on-chain and market indicators</p>
+    </div>
+
+    <!-- Price banner -->
+    <div class="bd-price-banner" id="bd-price-banner">
+      <span class="bd-price-value">Loading data...</span>
+    </div>
+
+    <!-- Consolidated signal + help -->
+    <div class="bd-signal-row">
+      <div class="bd-consolidated" id="bd-consolidated">Calculating...</div>
+      <button class="bd-help-btn" id="bd-help-btn" aria-label="Signal explanation">?</button>
+    </div>
+
+    <!-- Explanation panel -->
+    <div class="bd-explanation" id="bd-explanation">
+      <h3>How the consolidated signal is calculated</h3>
+      <p>Each indicator generates an individual score from -2 (strong sell) to +2 (strong buy). The consolidated score is the average of the selected indicators scores.</p>
+
+      <table class="bd-score-table">
+        <thead><tr><th>Score</th><th>Signal</th></tr></thead>
+        <tbody>
+          <tr><td>+2</td><td style="color:#00C853">STRONG BUY</td></tr>
+          <tr><td>+1</td><td style="color:#69F0AE">BUY</td></tr>
+          <tr><td>0</td><td style="color:#FFD600">NEUTRAL</td></tr>
+          <tr><td>-1</td><td style="color:#FF6D00">SELL</td></tr>
+          <tr><td>-2</td><td style="color:#FF1744">STRONG SELL</td></tr>
+        </tbody>
+      </table>
+
+      <hr />
+      <h4>Current breakdown</h4>
+      <div id="bd-breakdown"></div>
+
+      <hr />
+      <h4>Choose which indicators to use in the calculation</h4>
+      <div class="bd-checklist" id="bd-checklist">
+        <label><input type="checkbox" value="mayer_multiple" checked /> Mayer Multiple</label>
+        <label><input type="checkbox" value="200w_ma_ratio" checked /> 200W MA Ratio</label>
+        <label><input type="checkbox" value="mvrv" checked /> MVRV Ratio</label>
+        <label><input type="checkbox" value="fear_greed" checked /> Fear & Greed</label>
+        <label><input type="checkbox" value="rsi_weekly" checked /> Weekly RSI BTC/USD</label>
+        <label><input type="checkbox" value="rsi_monthly" checked /> Monthly RSI BTC/USD</label>
+        <label><input type="checkbox" value="rsi_xau_weekly" checked /> Weekly RSI BTC/XAU</label>
+        <label><input type="checkbox" value="rsi_xau_monthly" checked /> Monthly RSI BTC/XAU</label>
+      </div>
+    </div>
+
+    <!-- Loading indicator -->
+    <div class="bd-loading" id="bd-loading">
+      <span class="bd-spinner"></span> Loading data...
+    </div>
+
+    <!-- 8 indicator cards -->
+    <div class="bd-cards">
+      <div class="bd-card" id="bd-card-mayer_multiple">
+        <div class="bd-card-title">Mayer Multiple</div>
+        <div class="bd-card-value" id="bd-card-value-mayer_multiple">...</div>
+        <span class="bd-card-signal" id="bd-card-signal-mayer_multiple"></span>
+      </div>
+      <div class="bd-card" id="bd-card-200w_ma_ratio">
+        <div class="bd-card-title">200W MA Ratio</div>
+        <div class="bd-card-value" id="bd-card-value-200w_ma_ratio">...</div>
+        <span class="bd-card-signal" id="bd-card-signal-200w_ma_ratio"></span>
+      </div>
+      <div class="bd-card" id="bd-card-mvrv">
+        <div class="bd-card-title">MVRV Ratio</div>
+        <div class="bd-card-value" id="bd-card-value-mvrv">...</div>
+        <span class="bd-card-signal" id="bd-card-signal-mvrv"></span>
+      </div>
+      <div class="bd-card" id="bd-card-fear_greed">
+        <div class="bd-card-title">Fear & Greed</div>
+        <div class="bd-card-value" id="bd-card-value-fear_greed">...</div>
+        <span class="bd-card-signal" id="bd-card-signal-fear_greed"></span>
+      </div>
+      <div class="bd-card" id="bd-card-rsi_weekly">
+        <div class="bd-card-title">Weekly RSI BTC/USD</div>
+        <div class="bd-card-value" id="bd-card-value-rsi_weekly">...</div>
+        <span class="bd-card-signal" id="bd-card-signal-rsi_weekly"></span>
+      </div>
+      <div class="bd-card" id="bd-card-rsi_monthly">
+        <div class="bd-card-title">Monthly RSI BTC/USD</div>
+        <div class="bd-card-value" id="bd-card-value-rsi_monthly">...</div>
+        <span class="bd-card-signal" id="bd-card-signal-rsi_monthly"></span>
+      </div>
+      <div class="bd-card" id="bd-card-rsi_xau_weekly">
+        <div class="bd-card-title">Weekly RSI BTC/XAU</div>
+        <div class="bd-card-value" id="bd-card-value-rsi_xau_weekly">...</div>
+        <span class="bd-card-signal" id="bd-card-signal-rsi_xau_weekly"></span>
+      </div>
+      <div class="bd-card" id="bd-card-rsi_xau_monthly">
+        <div class="bd-card-title">Monthly RSI BTC/XAU</div>
+        <div class="bd-card-value" id="bd-card-value-rsi_xau_monthly">...</div>
+        <span class="bd-card-signal" id="bd-card-signal-rsi_xau_monthly"></span>
+      </div>
+    </div>
+
+    <!-- Detail panel (charts) -->
+    <div class="bd-detail" id="bd-detail">
+      <div id="bd-detail-content"></div>
+    </div>
+
+    <!-- Footer -->
+    <div class="bd-footer">
+      <span>BTC Signal Tracker | Data refreshed every 5 minutes | </span>
+      <span id="bd-last-update">Waiting...</span>
+    </div>
+
+  </div>
+
+  <script>
+    import { initDashboard } from '../../scripts/btc-dashboard';
+    initDashboard('en');
+  </script>
+</BaseLayout>

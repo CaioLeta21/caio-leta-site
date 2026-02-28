@@ -22,6 +22,7 @@ const routeMap: Record<string, string> = {
   'participacoes': 'appearances',
   'relatorios': 'reports',
   'contato': 'contact',
+  'indicadoresbtc': 'btcindicators',
 };
 
 /** Maps EN route slugs to PT route slugs */
@@ -79,6 +80,7 @@ export function getNavLinks(locale: Locale) {
       { href: '/en/appearances', label: t(locale, 'nav.appearances') },
       { href: '/en/reports', label: t(locale, 'nav.reports') },
       { href: '/en/contact', label: t(locale, 'nav.contact') },
+      { href: '/en/btcindicators', label: t(locale, 'nav.indicators') },
     ];
   }
   return [
@@ -88,6 +90,7 @@ export function getNavLinks(locale: Locale) {
     { href: '/participacoes', label: t(locale, 'nav.appearances') },
     { href: '/relatorios', label: t(locale, 'nav.reports') },
     { href: '/contato', label: t(locale, 'nav.contact') },
+    { href: '/indicadoresbtc', label: t(locale, 'nav.indicators') },
   ];
 }
 
