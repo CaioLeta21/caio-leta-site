@@ -73,6 +73,7 @@ interface AllData {
   price: PriceData | null;
   daily_closes: KlineData | null;
   weekly_closes: KlineData | null;
+  weekly_closes_extended: KlineData | null;
   monthly_closes: KlineData | null;
   mvrv: MVRVData | null;
   fear_greed: FearGreedData | null;
@@ -327,6 +328,45 @@ async function getMvrv(): Promise<MVRVData | null> {
   }
 }
 
+async function getWeeklyPricesCoinMetrics(): Promise<KlineData | null> {
+  try {
+    let url: string | null = 'https://community-api.coinmetrics.io/v4/timeseries/asset-metrics';
+    let params: Record<string, string> | null = {
+      assets: 'btc',
+      metrics: 'PriceUSD',
+      frequency: '1w',
+      start_time: '2010-01-01',
+      page_size: '10000',
+    };
+    const closes: number[] = [];
+    const dates: string[] = [];
+    const timestamps: number[] = [];
+
+    while (url) {
+      const queryStr = params ? '?' + new URLSearchParams(params).toString() : '';
+      const resp = await fetch(url + queryStr);
+      const data = await resp.json();
+      const series = data.data || [];
+      if (!series.length) break;
+      for (const entry of series) {
+        if (entry.PriceUSD != null) {
+          closes.push(parseFloat(entry.PriceUSD));
+          const dateStr = entry.time.slice(0, 10);
+          dates.push(dateStr);
+          timestamps.push(new Date(dateStr).getTime());
+        }
+      }
+      url = data.next_page_url || null;
+      params = null;
+    }
+
+    if (!closes.length) return null;
+    return { closes, timestamps, dates };
+  } catch {
+    return null;
+  }
+}
+
 async function getFearGreed(): Promise<FearGreedData | null> {
   try {
     const resp = await fetch('https://api.alternative.me/fng/?limit=0');
@@ -366,11 +406,12 @@ function calcBtcXauRatio(btcData: KlineData | null, paxgData: KlineData | null):
 }
 
 async function fetchAllData(): Promise<AllData> {
-  const [price, daily, weekly, monthly, mvrv, fng, paxgW, paxgM, btcWRaw, btcMRaw] =
+  const [price, daily, weekly, weeklyExtended, monthly, mvrv, fng, paxgW, paxgM, btcWRaw, btcMRaw] =
     await Promise.all([
       getBtcPrice(),
       getKlines('BTCUSDT', '1d', 200),
       getKlines('BTCUSDT', '1w', 1000),
+      getWeeklyPricesCoinMetrics(),
       getKlines('BTCUSDT', '1M', 200),
       getMvrv(),
       getFearGreed(),
@@ -384,6 +425,7 @@ async function fetchAllData(): Promise<AllData> {
     price,
     daily_closes: daily,
     weekly_closes: weekly,
+    weekly_closes_extended: weeklyExtended,
     monthly_closes: monthly,
     mvrv,
     fear_greed: fng,
@@ -533,7 +575,7 @@ function fngColor(value: number | null): string {
 function computeAllSignals(allData: AllData, lang: string): AllSignals {
   const labels = SIGNAL_LABELS[lang] || SIGNAL_LABELS.pt;
   const mayer = calcMayerMultiple(allData.daily_closes);
-  const ratio200w = calc200wMaRatio(allData.price, allData.weekly_closes);
+  const ratio200w = calc200wMaRatio(allData.price, allData.weekly_closes_extended || allData.weekly_closes);
 
   const rsiWeekly = allData.weekly_closes ? calcRSI(allData.weekly_closes.closes) : null;
   const rsiMonthly = allData.monthly_closes ? calcRSI(allData.monthly_closes.closes) : null;
@@ -1097,7 +1139,7 @@ function showDetail(cardId: string) {
   // Render charts after DOM update
   requestAnimationFrame(() => {
     if (cardId === '200w_ma_ratio') {
-      build200wChart('bd-chart-200w', rawData!.weekly_closes, sig.details as MA200WResult, L);
+      build200wChart('bd-chart-200w', rawData!.weekly_closes_extended || rawData!.weekly_closes, sig.details as MA200WResult, L);
     } else if (cardId === 'mvrv') {
       buildMVRVChart('bd-chart-mvrv', rawData!.mvrv, L);
     } else if (cardId === 'fear_greed') {
