@@ -334,13 +334,13 @@ async function getWeeklyPricesCoinMetrics(): Promise<KlineData | null> {
     let params: Record<string, string> | null = {
       assets: 'btc',
       metrics: 'PriceUSD',
-      frequency: '1w',
+      frequency: '1d',
       start_time: '2010-01-01',
       page_size: '10000',
     };
-    const closes: number[] = [];
-    const dates: string[] = [];
-    const timestamps: number[] = [];
+
+    // Fetch all daily prices
+    const dailyPrices: { date: string; price: number }[] = [];
 
     while (url) {
       const queryStr = params ? '?' + new URLSearchParams(params).toString() : '';
@@ -350,17 +350,43 @@ async function getWeeklyPricesCoinMetrics(): Promise<KlineData | null> {
       if (!series.length) break;
       for (const entry of series) {
         if (entry.PriceUSD != null) {
-          closes.push(parseFloat(entry.PriceUSD));
-          const dateStr = entry.time.slice(0, 10);
-          dates.push(dateStr);
-          timestamps.push(new Date(dateStr).getTime());
+          dailyPrices.push({
+            date: entry.time.slice(0, 10),
+            price: parseFloat(entry.PriceUSD),
+          });
         }
       }
       url = data.next_page_url || null;
       params = null;
     }
 
-    if (!closes.length) return null;
+    if (!dailyPrices.length) return null;
+
+    // Resample daily to weekly: group by ISO week, take last close of each week
+    const weekMap = new Map<string, { date: string; price: number }>();
+    for (const dp of dailyPrices) {
+      const d = new Date(dp.date + 'T00:00:00Z');
+      // Calculate ISO week key (year-week)
+      const jan4 = new Date(Date.UTC(d.getUTCFullYear(), 0, 4));
+      const dayOfYear = Math.floor((d.getTime() - new Date(Date.UTC(d.getUTCFullYear(), 0, 1)).getTime()) / 86400000);
+      const weekNum = Math.ceil((dayOfYear + jan4.getUTCDay() + 1) / 7);
+      const weekKey = `${d.getUTCFullYear()}-W${String(weekNum).padStart(2, '0')}`;
+      // Keep the last day of each week (overwrites earlier days)
+      weekMap.set(weekKey, dp);
+    }
+
+    const sortedWeeks = Array.from(weekMap.entries()).sort((a, b) => a[0].localeCompare(b[0]));
+
+    const closes: number[] = [];
+    const dates: string[] = [];
+    const timestamps: number[] = [];
+
+    for (const [, wp] of sortedWeeks) {
+      closes.push(wp.price);
+      dates.push(wp.date);
+      timestamps.push(new Date(wp.date + 'T00:00:00Z').getTime());
+    }
+
     return { closes, timestamps, dates };
   } catch {
     return null;
