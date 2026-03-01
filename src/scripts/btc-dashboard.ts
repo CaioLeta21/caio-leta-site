@@ -75,6 +75,7 @@ interface AllData {
   weekly_closes: KlineData | null;
   weekly_closes_extended: KlineData | null;
   monthly_closes: KlineData | null;
+  monthly_closes_extended: KlineData | null;
   mvrv: MVRVData | null;
   fear_greed: FearGreedData | null;
   btc_xau_weekly: KlineData | null;
@@ -393,6 +394,61 @@ async function getWeeklyPricesCoinMetrics(): Promise<KlineData | null> {
   }
 }
 
+async function getMonthlyPricesCoinMetrics(): Promise<KlineData | null> {
+  try {
+    let url: string | null = 'https://community-api.coinmetrics.io/v4/timeseries/asset-metrics';
+    let params: Record<string, string> | null = {
+      assets: 'btc',
+      metrics: 'PriceUSD',
+      frequency: '1d',
+      start_time: '2010-01-01',
+      page_size: '10000',
+    };
+
+    const dailyPrices: { date: string; price: number }[] = [];
+
+    while (url) {
+      const queryStr = params ? '?' + new URLSearchParams(params).toString() : '';
+      const resp = await fetch(url + queryStr);
+      const data = await resp.json();
+      const series = data.data || [];
+      if (!series.length) break;
+      for (const entry of series) {
+        if (entry.PriceUSD != null) {
+          dailyPrices.push({ date: entry.time.slice(0, 10), price: parseFloat(entry.PriceUSD) });
+        }
+      }
+      url = data.next_page_url || null;
+      params = null;
+    }
+
+    if (!dailyPrices.length) return null;
+
+    // Resample daily to monthly: group by YYYY-MM, take last close of each month
+    const monthMap = new Map<string, { date: string; price: number }>();
+    for (const dp of dailyPrices) {
+      const monthKey = dp.date.slice(0, 7);
+      monthMap.set(monthKey, dp);
+    }
+
+    const sortedMonths = Array.from(monthMap.entries()).sort((a, b) => a[0].localeCompare(b[0]));
+
+    const closes: number[] = [];
+    const dates: string[] = [];
+    const timestamps: number[] = [];
+
+    for (const [monthKey, mp] of sortedMonths) {
+      closes.push(mp.price);
+      dates.push(monthKey);
+      timestamps.push(new Date(mp.date + 'T00:00:00Z').getTime());
+    }
+
+    return { closes, timestamps, dates };
+  } catch {
+    return null;
+  }
+}
+
 async function getFearGreed(): Promise<FearGreedData | null> {
   try {
     const resp = await fetch('https://api.alternative.me/fng/?limit=0');
@@ -432,13 +488,14 @@ function calcBtcXauRatio(btcData: KlineData | null, paxgData: KlineData | null):
 }
 
 async function fetchAllData(): Promise<AllData> {
-  const [price, daily, weekly, weeklyExtended, monthly, mvrv, fng, paxgW, paxgM, btcWRaw, btcMRaw] =
+  const [price, daily, weekly, weeklyExtended, monthly, monthlyExtended, mvrv, fng, paxgW, paxgM, btcWRaw, btcMRaw] =
     await Promise.all([
       getBtcPrice(),
       getKlines('BTCUSDT', '1d', 200),
       getKlines('BTCUSDT', '1w', 1000),
       getWeeklyPricesCoinMetrics(),
       getKlines('BTCUSDT', '1M', 200),
+      getMonthlyPricesCoinMetrics(),
       getMvrv(),
       getFearGreed(),
       getKlines('PAXGUSDT', '1w', 1000),
@@ -453,6 +510,7 @@ async function fetchAllData(): Promise<AllData> {
     weekly_closes: weekly,
     weekly_closes_extended: weeklyExtended,
     monthly_closes: monthly,
+    monthly_closes_extended: monthlyExtended,
     mvrv,
     fear_greed: fng,
     btc_xau_weekly: calcBtcXauRatio(btcWRaw, paxgW),
@@ -603,8 +661,10 @@ function computeAllSignals(allData: AllData, lang: string): AllSignals {
   const mayer = calcMayerMultiple(allData.daily_closes);
   const ratio200w = calc200wMaRatio(allData.price, allData.weekly_closes_extended || allData.weekly_closes);
 
-  const rsiWeekly = allData.weekly_closes ? calcRSI(allData.weekly_closes.closes) : null;
-  const rsiMonthly = allData.monthly_closes ? calcRSI(allData.monthly_closes.closes) : null;
+  const weeklyForRsi = allData.weekly_closes_extended || allData.weekly_closes;
+  const monthlyForRsi = allData.monthly_closes_extended || allData.monthly_closes;
+  const rsiWeekly = weeklyForRsi ? calcRSI(weeklyForRsi.closes) : null;
+  const rsiMonthly = monthlyForRsi ? calcRSI(monthlyForRsi.closes) : null;
   const rsiXauWeekly = allData.btc_xau_weekly ? calcRSI(allData.btc_xau_weekly.closes) : null;
   const rsiXauMonthly = allData.btc_xau_monthly ? calcRSI(allData.btc_xau_monthly.closes) : null;
 
@@ -1171,9 +1231,9 @@ function showDetail(cardId: string) {
     } else if (cardId === 'fear_greed') {
       buildFearGreedChart('bd-chart-fng', rawData!.fear_greed);
     } else if (cardId === 'rsi_weekly') {
-      buildRSIChart('bd-chart-rsi', rawData!.weekly_closes, sig, L);
+      buildRSIChart('bd-chart-rsi', rawData!.weekly_closes_extended || rawData!.weekly_closes, sig, L);
     } else if (cardId === 'rsi_monthly') {
-      buildRSIChart('bd-chart-rsi', rawData!.monthly_closes, sig, L);
+      buildRSIChart('bd-chart-rsi', rawData!.monthly_closes_extended || rawData!.monthly_closes, sig, L);
     } else if (cardId === 'rsi_xau_weekly') {
       buildRSIChart('bd-chart-rsi', rawData!.btc_xau_weekly, sig, L);
     } else if (cardId === 'rsi_xau_monthly') {
