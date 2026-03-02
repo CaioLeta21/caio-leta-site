@@ -28,9 +28,10 @@ const switchAriaLabel = locale === 'pt' ? 'Switch to English' : 'Mudar para Port
           <li>
             <a
               href={link.href}
+              {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
               class:list={[
                 'text-sm font-medium transition-opacity hover:opacity-70',
-                currentPath === link.href || currentPath === link.href + '/'
+                !link.external && (currentPath === link.href || currentPath === link.href + '/')
                   ? 'text-accent dark:text-blue-400'
                   : 'text-primary/70 dark:text-dark-text/70'
               ]}
@@ -81,9 +82,10 @@ const switchAriaLabel = locale === 'pt' ? 'Switch to English' : 'Mudar para Port
         <li>
           <a
             href={link.href}
+            {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             class:list={[
               'block text-sm font-medium transition-opacity hover:opacity-70',
-              currentPath === link.href || currentPath === link.href + '/'
+              !link.external && (currentPath === link.href || currentPath === link.href + '/')
                 ? 'text-accent dark:text-blue-400'
                 : 'text-primary/70 dark:text-dark-text/70'
             ]}

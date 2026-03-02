@@ -11,7 +11,7 @@ export const translations = {
     "nav.reports": "Relatórios",
     "nav.geology": "Geologia",
     "nav.contact": "Contato",
-    "nav.indicators": "Indicadores BTC",
+    "nav.indicators": "Leta Build",
 
     // Header
     "header.toggleTheme": "Alternar tema",
@@ -97,7 +97,7 @@ export const translations = {
     "nav.reports": "Reports",
     "nav.geology": "Geology",
     "nav.contact": "Contact",
-    "nav.indicators": "BTC Indicators",
+    "nav.indicators": "Leta Build",
 
     // Header
     "header.toggleTheme": "Toggle theme",

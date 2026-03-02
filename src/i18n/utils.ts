@@ -78,7 +78,7 @@ export function getNavLinks(locale: Locale) {
       { href: '/en/appearances', label: t(locale, 'nav.appearances') },
       { href: '/en/reports', label: t(locale, 'nav.reports') },
       { href: '/en/contact', label: t(locale, 'nav.contact') },
-      { href: '/en/btcindicators', label: t(locale, 'nav.indicators') },
+      { href: 'https://letabuild.com', label: t(locale, 'nav.indicators'), external: true },
     ];
   }
   return [
@@ -86,7 +86,7 @@ export function getNavLinks(locale: Locale) {
     { href: '/participacoes', label: t(locale, 'nav.appearances') },
     { href: '/relatorios', label: t(locale, 'nav.reports') },
     { href: '/contato', label: t(locale, 'nav.contact') },
-    { href: '/indicadoresbtc', label: t(locale, 'nav.indicators') },
+    { href: 'https://letabuild.com', label: t(locale, 'nav.indicators'), external: true },
   ];
 }
 
