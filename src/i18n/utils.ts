@@ -74,9 +74,9 @@ export function formatMonthYear(dateStr: string, locale: Locale): string {
 export function getNavLinks(locale: Locale) {
   if (locale === 'en') {
     return [
-      { href: '/en/articles', label: t(locale, 'nav.articles') },
       { href: '/en/appearances', label: t(locale, 'nav.appearances') },
       { href: '/en/reports', label: t(locale, 'nav.reports') },
+      { href: '/en/articles', label: t(locale, 'nav.articles') },
       { href: '/en/contact', label: t(locale, 'nav.contact') },
       { href: 'https://letabuild.com', label: t(locale, 'nav.indicators'), external: true },
     ];
