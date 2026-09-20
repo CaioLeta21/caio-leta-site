@@ -37,10 +37,51 @@ Guia completo de como rodar um node Bitcoin, ~54 KB, em 6 capítulos:
 O `<title>` publicado é `Rode seu Node Bitcoin - letabuild.com`, embora a página
 esteja servida em `caioleta.com`.
 
-## Estado
+## Como o CSS foi recuperado — 20/set/2026
 
-Este HTML é o **único registro** do conteúdo. O fonte `.astro` ainda precisa ser
-reconstruído a partir dele e devolvido a `src/pages/`.
+O HTML sozinho não bastava: os estilos (`nt-*`) estavam em
+`/_astro/node.Bmd8HngS.css`, que já retornava **404** no site publicado.
 
-Enquanto isso não acontecer, qualquer publicação a partir do repositório
-**remove a página do ar**, porque ela não existe no fonte.
+O que não funcionou:
+
+- **Internet Archive** — nada arquivado (`/node/` e `/_astro/*` ausentes do CDX).
+- **Baixar do site no ar** — o deploy atual não tem mais o arquivo.
+
+O que funcionou: **URL de preview da versão antiga do Worker**. A Cloudflare
+mantém cada versão publicada acessível num host próprio, servindo os assets
+daquela versão:
+
+```
+https://<prefixo-da-versao>-<worker>.<subdominio>.workers.dev
+```
+
+No caso, a versão `d121bc06` (a última publicada à mão, de ~abr/2026):
+
+```
+https://d121bc06-caio-leta-site.caioleta.workers.dev/_astro/node.Bmd8HngS.css
+https://d121bc06-caio-leta-site.caioleta.workers.dev/node/
+```
+
+O HTML vindo dali é **byte a byte idêntico** ao que estava em `live-node.html`,
+o que confirma que o resgate por cache era autêntico.
+
+Guarde essa técnica: enquanto a versão existir no histórico do Worker, ela
+continua servível, mesmo que o domínio já sirva outra coisa.
+
+## Estado: resolvido
+
+`src/pages/node.astro` foi reconstruído e a página voltou ao repositório.
+Verificação contra o original:
+
+| Item | Resultado |
+|---|---|
+| Corpo do HTML renderizado | idêntico, 30.781 caracteres |
+| CSS | idêntico (mesmo SHA-256 e mesmo hash de build) |
+| JavaScript | reescrito legível, comportamento equivalente |
+
+O CSS entrou como `<style is:global>` porque o original não usava seletores
+com escopo. O build gera `node.Bmd8HngS.css` — o mesmo nome do arquivo
+original, já que o Astro deriva o hash do conteúdo.
+
+Os arquivos `node-publicado.html` e `node-original.css` ficam aqui como
+referência do que estava no ar.
