@@ -11,17 +11,6 @@ Onde o ecossistema da soberania monetária se encontra fisicamente uma vez por a
 
 ---
 
-Neste artigo
-- Razão Sinal-Ruído
-- Bitcoin Conference
-- Praga Não É Acaso
-- A Grade 2026
-- Por Que Importa Pra Você
-- A Excursão BetterMoney
-- Conclusão
-- Manual Prático
-- Fontes
-
 ## 1. Razão sinal-ruído, a métrica que ninguém aplica em conferência
 
 Existe um conceito amplamente difundido na engenharia de telecomunicação utilizado para avaliar canais de transmissão: razão sinal-ruído (SNR, signal-to-noise ratio). Quanto sinal útil chega pelo cabo, quanto barulho chega junto. Quando o ruído sobe, a mensagem se perde mesmo que o volume aumente. O sinal é o que importa, o ruído é a distração.
@@ -215,9 +204,7 @@ Quem já mora fora há vários anos, tem multisig com conhecimento consolidado, 
 
 Pra quem está no meio do caminho, com R$ 5 milhões a R$ 50 milhões, alguma exposição a Bitcoin, e a sensação de que falta integração estrutural, é pra você.
 
-Antes da excursão, o diagnóstico
-
-Pra brasileiros que vão na excursão BetterMoney à BTC Prague, o Raio-X do Sistema é a etapa anterior recomendada: chegar em Praga sabendo onde está exposto multiplica o aproveitamento das três conversas in loco com o Bernardo durante o evento. O Raio-X é sessão de 30 minutos com a equipe da BetterMoney, mapeamento completo de exposição em cinco camadas (fiscal, custódia, herança, residência, geográfica), proposta sob medida no mesmo dia. [Agendar Raio-X →](https://bettermoney.com.br)
+**Antes da excursão, o diagnóstico:** Pra brasileiros que vão na excursão BetterMoney à BTC Prague, o Raio-X do Sistema é a etapa anterior recomendada: chegar em Praga sabendo onde está exposto multiplica o aproveitamento das três conversas in loco com o Bernardo durante o evento. O Raio-X é sessão de 30 minutos com a equipe da BetterMoney, mapeamento completo de exposição em cinco camadas (fiscal, custódia, herança, residência, geográfica), proposta sob medida no mesmo dia. [Agendar Raio-X →](https://bettermoney.com.br)
 
 ## 6. A excursão BetterMoney
 
@@ -270,9 +257,7 @@ Para brasileiro com patrimônio exposto, a viagem que mais importa do calendári
 
 Cinco anos atrás, a BTC Prague nem existia. Quem começa a ir agora, na quarta edição, ainda chega cedo. Em mais cinco anos, vai ser referência local da comunidade brasileira de Bitcoin. Esse tipo de decisão não tem segunda chance simétrica.
 
-Próximo passo
-
-Sem formulário, sem lista de espera. Mensagem direta no WhatsApp do Bernardo, conta seu contexto, e a gente fala se faz sentido você ir junto. Três vagas restantes no momento da publicação. [Falar com Bernardo →](https://bettermoney.com.br)
+**Próximo passo:** Sem formulário, sem lista de espera. Mensagem direta no WhatsApp do Bernardo, conta seu contexto, e a gente fala se faz sentido você ir junto. Três vagas restantes no momento da publicação. [Falar com Bernardo →](https://bettermoney.com.br)
 
 ## 8. Apêndice: manual prático pro brasileiro em Praga
 
@@ -363,6 +348,4 @@ Side event recomendado: o Freedom Tech Summit acontece no dia 10 de junho de 202
 
 [Atlas21: Paralelní Polis fechou em março de 2026](https://atlas21.com/prague-paralelni-polis-hub-closes-permanently/) · Reportagem sobre o fechamento definitivo do Paralelní Polis em 2 de março de 2026, após 11 anos de operação em Dělnická 43, Holešovice. Decisão do proprietário do imóvel de não permitir mais atividades ligadas a Bitcoin. O Institute of Cryptoanarchy como entidade não-profit segue existindo, mas perdeu sede física.
 
-Disclaimer
-
-Este texto é análise editorial do Caio Leta, não recomendação de investimento. As decisões patrimoniais e de viagem mencionadas são responsabilidade exclusiva do leitor. A BetterMoney atua como provedora de serviços de estruturação patrimonial e não substitui assessoria jurídica, contábil ou fiscal individual. Dados de programa, palestrantes e logística da BTC Prague 2026 podem ser atualizados pela organização do evento até a data de realização.
+**Disclaimer:** Este texto é análise editorial do Caio Leta, não recomendação de investimento. As decisões patrimoniais e de viagem mencionadas são responsabilidade exclusiva do leitor. A BetterMoney atua como provedora de serviços de estruturação patrimonial e não substitui assessoria jurídica, contábil ou fiscal individual. Dados de programa, palestrantes e logística da BTC Prague 2026 podem ser atualizados pela organização do evento até a data de realização.

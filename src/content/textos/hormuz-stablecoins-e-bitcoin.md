@@ -13,9 +13,7 @@ O Irã transformou o Estreito de Hormuz num pedágio, aceitando yuan, stablecoin
 
 **Tese central:** O Irã transformou o Estreito de Hormuz, por onde passa 20% do petróleo mundial, num pedágio que aceita yuan, stablecoins e, desde abril, Bitcoin. Esse evento vai além de uma crise energética: é um stress test em tempo real das propriedades monetárias do dólar, do yuan, das stablecoins e do Bitcoin. Cada instrumento revelou o que realmente é quando submetido a pressão extrema, e os resultados têm implicações diretas para qualquer pessoa que gerencia patrimônio em moeda fiat.
 
-Por que você deveria se importar
-
-Se você tem patrimônio denominado em real, dólar ou qualquer moeda fiduciária, você está exposto ao mesmo tipo de risco que iranianos e ucranianos enfrentaram: controles de capital, congelamento de ativos e censura financeira. Os mecanismos são os mesmos; só a intensidade muda. O Brasil já confiscou poupanças (Plano Collor), já restringiu câmbio, e já teve seis moedas em duas décadas. Hormuz mostra em tempo real qual instrumento financeiro funciona quando todos os outros falham.
+**Por que você deveria se importar:** Se você tem patrimônio denominado em real, dólar ou qualquer moeda fiduciária, você está exposto ao mesmo tipo de risco que iranianos e ucranianos enfrentaram: controles de capital, congelamento de ativos e censura financeira. Os mecanismos são os mesmos; só a intensidade muda. O Brasil já confiscou poupanças (Plano Collor), já restringiu câmbio, e já teve seis moedas em duas décadas. Hormuz mostra em tempo real qual instrumento financeiro funciona quando todos os outros falham.
 
 ## 1. O estreito mais importante do mundo para o mercado de energia
 

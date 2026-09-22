@@ -11,9 +11,7 @@ Como funciona o empréstimo colateralizado em Bitcoin e o que levar em conta par
 
 ---
 
-Resumo
-
-Quem tem bitcoin acumulado, está sem fluxo de caixa e precisa de liquidez tem três saídas ruins: vender parte dos seus sats, pegar empréstimo no banco a taxas altíssimas ou pegar empréstimo usando o bitcoin como colateral e sacando dólares para utilizar. Cada opção tem seus prós e contras e existem diversas considerações que devem ser feitas antes do investidor tomar a decisão de como obter liquidez a partir dos seus satoshis. Neste artigo, a gente explica melhor como os empréstimos colateralizados em bitcoin funcionam, como se proteger de empresas menos sérias como Celsius e BlockFi e anunciamos uma nova parceria entre a BetterMoney e a Ledn.
+**Resumo:** Quem tem bitcoin acumulado, está sem fluxo de caixa e precisa de liquidez tem três saídas ruins: vender parte dos seus sats, pegar empréstimo no banco a taxas altíssimas ou pegar empréstimo usando o bitcoin como colateral e sacando dólares para utilizar. Cada opção tem seus prós e contras e existem diversas considerações que devem ser feitas antes do investidor tomar a decisão de como obter liquidez a partir dos seus satoshis. Neste artigo, a gente explica melhor como os empréstimos colateralizados em bitcoin funcionam, como se proteger de empresas menos sérias como Celsius e BlockFi e anunciamos uma nova parceria entre a BetterMoney e a Ledn.
 
 ## O cemitério de 2022
 
