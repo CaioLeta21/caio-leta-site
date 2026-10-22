@@ -7,7 +7,7 @@ publicadoEm: "Leta Build"
 linkOriginal: "https://analises.letabuild.com/topo-fundo-adocao"
 ---
 
-Fast money, slow money e por que os fundos de bear market talvez expliquem melhor a maturação do Bitcoin do que os topos de bull market.
+*Fast money*, *slow money* e por que os fundos de bear market talvez expliquem melhor a maturação do Bitcoin do que os topos de bull market.
 
 ---
 
