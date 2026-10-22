@@ -152,28 +152,36 @@ A ideia de fundo como adoção fica mais forte quando várias dessas métricas c
 
 ### Os fundos nominais: o chão que sobe
 
-Os fundos de cada ciclo grande oferecem a série de dados mais direta para testar a tese. Em janeiro de 2015, o menor preço do ciclo ficou em torno de US$ 152, com queda de cerca de 86% a partir do pico anterior. Em dezembro de 2018, o fundo chegou a US$ 3.122, com queda de 84%. Em novembro de 2022, o ponto mínimo foi de aproximadamente US$ 15.500, com queda de 77%. No ciclo atual, o preço atingiu cerca de US$ 61.300 em junho de 2026, com queda de aproximadamente 51% a partir do pico anterior, continuando os dois padrões: fundos nominalmente mais altos e quedas progressivamente menos profundas. O ciclo ainda está em formação.
+Os fundos de cada ciclo grande oferecem a série de dados mais direta para testar a tese. Em janeiro de 2015, o menor preço do ciclo ficou em torno de US$ 152, com queda de cerca de 86% a partir do pico anterior. Em dezembro de 2018, o fundo chegou a US$ 3.122, com queda de 84%. Em novembro de 2022, o ponto mínimo foi de aproximadamente US$ 15.500, com queda de 77%. No ciclo atual, o mínimo até agora foi de US$ 58.525, em 30 de junho de 2026, com queda de cerca de 53% a partir do pico de outubro de 2025, continuando os dois padrões: fundos nominalmente mais altos e quedas progressivamente menos profundas. Desde então o preço subiu cerca de 44%, para a faixa de US$ 84 mil em outubro de 2026, o que sugere que o piso do ciclo ficou para trás, ainda que só a passagem do tempo confirme isso.
 
 | Ciclo | Fundo nominal | Queda do pico | Fundo versus ciclo anterior |
 |---|---|---|---|
 | 2015 | ~US$ 152 (jan. 2015) | ~86% | Primeiro ciclo com dados comparáveis |
 | 2018/2019 | ~US$ 3.122 (dez. 2018) | ~84% | Cerca de 20 vezes acima do fundo de 2015 |
 | 2022 | ~US$ 15.500 (nov. 2022) | ~77% | Cerca de 5 vezes acima do fundo de 2018 |
-| 2024-2026 (em formação) | ~US$ 61.300 (jun. 2026)* | ~51% | Cerca de 4 vezes acima do fundo de 2022 |
+| 2024-2026 | US$ 58.525 (30 jun. 2026)* | ~53% | Cerca de 4 vezes acima do fundo de 2022 |
 
-* Fundo provisório de junho de 2026. O ciclo atual pode não ter atingido o ponto mínimo definitivo.
+* Mínimo do ciclo até 21 de outubro de 2026, em fechamento diário da CoinMetrics. Os três fundos anteriores são mínimas intradiárias, por isso ficam alguns pontos percentuais abaixo do fechamento do mesmo dia. Quatro meses depois do mínimo, o preço acumula alta de cerca de 44%.
 
-Os dois gráficos a seguir mostram a mesma série de quatro fundos verificados: o ciclo atual em formação em torno de US$ 61.300 em junho de 2026, mais os três ciclos anteriores. Em escala linear, a magnitude do salto entre ciclos fica visível de forma imediata: o fundo de 2022 vale cem vezes o de 2015 em valor nominal.
+Antes de isolar esses quatro pontos, vale olhar para a série inteira. O gráfico a seguir mostra o preço semanal do Bitcoin desde 2013, com os fundos de ciclo e o topo de outubro de 2025 marcados sobre a própria curva. Ele serve de referência para o que vem depois: os fundos não são pontos soltos no tempo, são o piso de cada uma das quatro ondas que a série desenha.
 
-Imagem 6 — Fundos de ciclo: escala linear
+Imagem 6 — Bitcoin: preço semanal desde 2013
 
-Escala linear. Dados verificados: 2015 ($152), 2018 ($3.122), 2022 ($15.500). *2026 em formação (jun. 2026).
+Fechamento semanal, escala logarítmica. Fonte: CoinMetrics (PriceUSD). Os marcos indicam a semana do mínimo de cada ciclo; os valores exatos estão nos dois gráficos seguintes.
+
+Duas coisas aparecem quando a série é vista inteira. A primeira é que cada fundo acontece acima do topo do ciclo anterior ao último: o mínimo de 2018 está acima de todo o ciclo de 2013, e o mínimo de 2022 está acima de todo o ciclo de 2017. A segunda é que as quedas, embora sempre violentas, ocupam uma fatia cada vez menor da altura do gráfico. É esse segundo ponto que os dois gráficos seguintes isolam.
+
+Os dois gráficos a seguir mostram a mesma série de quatro fundos verificados: o mínimo de US$ 58.525 em 30 de junho de 2026, mais os três ciclos anteriores. Em escala linear, a magnitude do salto entre ciclos fica visível de forma imediata: o fundo de 2022 vale cem vezes o de 2015 em valor nominal.
+
+Imagem 7 — Fundos de ciclo: escala linear
+
+Escala linear. Dados verificados: 2015 ($152), 2018 ($3.122), 2022 ($15.500). *Mínimo de 30 jun. 2026, o mais baixo do ciclo até 21 out. 2026.
 
 Em escala logarítmica, a tendência de ascensão estrutural fica mais clara. A distância relativa entre os pontos se mantém consistente de ciclo para ciclo, sugerindo que o chão cresce em proporção semelhante a cada novo mínimo.
 
-Imagem 7 — Fundos de ciclo: escala logarítmica
+Imagem 8 — Fundos de ciclo: escala logarítmica
 
-* Jun. 2026 — preço corrente, fundo do ciclo ainda em formação. Escala logarítmica.
+* Jun. 2026 — mínimo do ciclo até 21 de outubro de 2026. Escala logarítmica.
 
 Em cada um desses fundos, o preço de mercado violou temporariamente a *realized price*, a métrica que representa o custo médio de aquisição de todo o Bitcoin em circulação com base no preço da última movimentação de cada moeda. Em 2018, o fundo ficou aproximadamente 30% abaixo da *realized price*. Em 2022, cerca de 26% abaixo. Ambos os percentuais são derivados do MVRV, calculado a partir de dados do Glassnode. O fato de que o mercado viola essa métrica em capitulações e se recupera a partir dela, em ciclos com estruturas radicalmente diferentes, é o que torna a *realized price* útil como âncora de adoção estrutural.
 
@@ -181,7 +189,7 @@ Em cada um desses fundos, o preço de mercado violou temporariamente a *realized
 
 O MVRV, relação entre capitalização de mercado e capitalização realizada, mede o quanto o preço de mercado excede o custo médio agregado de aquisição da rede. Em 2013, o MVRV atingiu 6 vezes a capitalização realizada no pico do ciclo. Em 2017 e novamente em 2021, o pico ficou em 4 vezes. No ciclo de 2024 e 2025, o MVRV se manteve predominantemente entre 2 e 3 vezes durante o *bull market*, segundo análise da Fidelity Digital Assets. Topos com MVRV progressivamente menores, ao longo de ciclos distintos, são consistentes com a hipótese de uma base de demanda mais estrutural e menos dependente de euforia especulativa pura.
 
-Imagem 8 — MVRV nos picos de bull market por ciclo
+Imagem 9 — MVRV nos picos de bull market por ciclo
 
 Fonte: Fidelity Digital Assets — "Is Bitcoin's Four-Year Cycle Over?"
 
@@ -191,7 +199,7 @@ O Glassnode registra esse indicador de forma contínua e publica marcos específ
 
 Após o *halving* de 2024, pela primeira vez na história do Bitcoin, a quantidade de moedas sem movimentação por dez anos ou mais cresceu em ritmo superior à emissão nova: média de 566 BTC por dia entrando nessa categoria, contra 450 BTC diários emitidos pelo protocolo, segundo a Fidelity Digital Assets. O gráfico a seguir mostra os seis pontos verificados disponíveis, todos a partir de dados primários do Glassnode ou de publicações que os citam diretamente.
 
-Imagem 9 — Oferta controlada por *long-term holders* (2020-2026)
+Imagem 10 — Oferta controlada por *long-term holders* (2020-2026)
 
 ● Todos os 6 pontos verificados (Glassnode, CoinDesk, The Block). Sem interpolação. Mai 2026: CoinDesk.
 
@@ -201,11 +209,11 @@ Em março de 2020, o Glassnode registrava 3,146 milhões de BTC em carteiras de 
 
 O gráfico a seguir mostra a relação histórica entre o volume de Bitcoin em lucro e em prejuízo não realizado. Em cada capitulação de ciclo, as duas séries se cruzam. O cruzamento mais recente está marcado com dados verificados: em 4 de junho de 2026, o volume em prejuízo superou o em lucro pela primeira vez no ciclo atual.
 
-Imagem 10 — Supply em lucro vs. prejuízo: o sinal que marcou todos os fundos
+Imagem 11 — Supply em lucro vs. prejuízo: o sinal que marcou todos os fundos
 
 ● Jun. 2026 verificado (CoinDesk, 04/06/2026): 10,5M em prejuízo vs 9,8M em lucro. Histórico aproximado. Os dois valores (medições em momentos ligeiramente distintos) somam 20,3M, levemente acima da oferta circulante.
 
-**O sinal de junho de 2026:** Em 4 de junho de 2026, pela primeira vez no ciclo atual, o volume de Bitcoin mantido em prejuízo não realizado superou o volume mantido com lucro: 10,5 milhões de BTC em prejuízo contra 9,8 milhões de BTC em lucro, segundo o CoinDesk. Os dois números somam 20,3 milhões de BTC, levemente acima da oferta em circulação de cerca de 19,9 milhões: como as medições não são simultâneas, uma pequena sobreposição é esperada e não compromete a interpretação do sinal. O preço tocou US$ 61.300, coincidindo com a média móvel de 200 semanas, alcançada em todos os *bear markets* anteriores — e na maioria deles furada temporariamente antes de o fundo ser confirmado. Se o padrão de ciclos anteriores se confirmar, o eventual fundo deste ciclo estará se formando em torno de quatro vezes acima do fundo de novembro de 2022. A duração dessa condição tem variado muito: cerca de um mês em março de 2020, seis meses no bear market de 2022. O chão continua subindo. O tempo abaixo dele ainda é incerto.
+**O sinal de junho de 2026:** Em 4 de junho de 2026, pela primeira vez no ciclo atual, o volume de Bitcoin mantido em prejuízo não realizado superou o volume mantido com lucro: 10,5 milhões de BTC em prejuízo contra 9,8 milhões de BTC em lucro, segundo o CoinDesk. Os dois números somam 20,3 milhões de BTC, levemente acima da oferta em circulação de cerca de 19,9 milhões: como as medições não são simultâneas, uma pequena sobreposição é esperada e não compromete a interpretação do sinal. O preço tocou US$ 61.300, coincidindo com a média móvel de 200 semanas, alcançada em todos os *bear markets* anteriores — e na maioria deles furada temporariamente antes de o fundo ser confirmado. Foi o que aconteceu: o preço seguiu abaixo da média por mais algumas semanas e marcou o mínimo do ciclo em US$ 58.525, cerca de 4,5% abaixo dela, em 30 de junho. O fundo ficou em torno de quatro vezes acima do de novembro de 2022, como o padrão dos ciclos anteriores sugeria. A duração dessa condição tem variado muito: cerca de um mês em março de 2020, seis meses no *bear market* de 2022. Desta vez foram dez fechamentos diários abaixo dela, espalhados por cerca de quatro semanas, entre 5 de junho e 1º de julho. O chão continua subindo.
 
 ## 8. O que isso muda para quem acumula Bitcoin
 
@@ -250,6 +258,8 @@ Investopedia: pesquisa do Bank of America sobre [Magnificent Seven como trade ma
 CoinDesk: [This bitcoin metric has marked every bear market bottom, and it's just flashed again](https://www.coindesk.com/markets/2026/06/04/this-bitcoin-metric-has-marked-every-bear-market-bottom-and-it-s-just-flashed-again) (junho de 2026). Supply in profit versus loss, *realized price* (~US$ 54.000) e 200-week MA (US$ 61.300) em 4 jun. 2026.
 
 CoinDesk: [Bitcoin Long-Term Holders Control 75% of Circulating Supply: Glassnode](https://www.coindesk.com/markets/2023/07/24/bitcoin-long-term-holders-control-75-of-circulating-supply-glassnode) (julho de 2023). LTH supply de 14,52 milhões de BTC (75% da oferta circulante).
+
+CoinMetrics: [Community API, métrica PriceUSD](https://docs.coinmetrics.io/api/v4/#tag/Timeseries/operation/getTimeseriesAssetMetrics). Série diária usada no gráfico semanal (721 semanas, de 6 jan. 2013 a 21 out. 2026), no pico de 6 out. 2025 (US$ 124.824) e no mínimo de 30 jun. 2026 (US$ 58.525).
 
 Fidelity Digital Assets: [Is Bitcoin's Four-Year Cycle Over?](https://www.fidelitydigitalassets.com/research-and-insights/bitcoins-four-year-cycle-over). MVRV por ciclo (2013: 6x; 2017 e 2021: 4x; 2024/2025: 2-3x) e dado de ancient supply pós-*halving* 2024.
 
