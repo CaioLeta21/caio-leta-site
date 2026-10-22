@@ -7,7 +7,7 @@ publicadoEm: "Leta Build"
 linkOriginal: "https://analises.letabuild.com/bandeiras"
 ---
 
-A classe alta argentina guarda 20 vezes mais patrimônio líquido fora do país, per capita, que a brasileira. A diferença vem de experiência acumulada em crises, com três quebras na memória recente contra uma no Brasil. Onde você mora, tributa, guarda e gasta são quatro decisões jurídicas diferentes, e podem ser respondidas por quatro países diferentes.
+A classe alta argentina guarda 20 vezes mais patrimônio líquido fora do país, *per capita*, que a brasileira. A diferença vem de experiência acumulada em crises, com três quebras na memória recente contra uma no Brasil. Onde você mora, tributa, guarda e gasta são quatro decisões jurídicas diferentes, e podem ser respondidas por quatro países diferentes.
 
 ---
 
